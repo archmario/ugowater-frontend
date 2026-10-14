@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import * as ReactDOM from 'react-dom';
 import { cn } from '@/utils/cn';
 import { srcSetFor } from '@/utils/image';
 
@@ -25,6 +26,20 @@ export default function SmartImage({
   wrapperClassName,
   className,
 }: SmartImageProps) {
+  // Priority images get a high-priority preload link in <head>, so the browser
+  // fetches them before anything else. (Next's built-in React has preload();
+  // the installed @types don't know it yet.)
+  if (priority) {
+    const preload = (ReactDOM as unknown as { preload?: (href: string, options: object) => void })
+      .preload;
+    preload?.(src, {
+      as: 'image',
+      fetchPriority: 'high',
+      imageSrcSet: srcSetFor(src),
+      imageSizes: sizes,
+    });
+  }
+
   const ref = useRef<HTMLImageElement>(null);
   const [loaded, setLoaded] = useState(false);
 
@@ -44,8 +59,6 @@ export default function SmartImage({
         alt={alt}
         loading={priority ? 'eager' : 'lazy'}
         decoding={priority ? 'sync' : 'async'}
-        // React 18 doesn't know the camelCase prop yet; the lowercase attribute passes through
-        {...(priority && { fetchpriority: 'high' })}
         onLoad={() => setLoaded(true)}
         className={cn(
           'w-full h-full object-cover transition-opacity duration-500',
