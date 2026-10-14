@@ -25,8 +25,10 @@ export default function Header() {
     setMenuOpen(false);
   }, [pathname]);
 
-  // At the top of the home page the header sits on the dark hero video
-  const overHero = pathname === '/' && !scrolled && !menuOpen;
+  // Pages that open with a dark section (the home hero video, the process
+  // section): at the top, the header text and toggle switch to white
+  const darkTop = pathname === '/' || pathname.startsWith('/process');
+  const overHero = darkTop && !scrolled && !menuOpen;
 
   const isActive = (href: string) => {
     if (href === '/') return pathname === '/';
