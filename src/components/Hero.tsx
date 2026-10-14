@@ -4,19 +4,19 @@ import { Droplets, ShieldCheck, Truck, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import SmartImage from '@/components/SmartImage';
 import WordRise from '@/components/WordRise';
+import HeroVideo from '@/components/HeroVideo';
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-24 overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-sky-50 via-background to-cyan-50 dark:from-background dark:via-background dark:to-background" />
+      {/* Background video, tinted so the text stays readable */}
+      <HeroVideo />
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/60 to-slate-950/30" />
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-slate-950/60 to-transparent" />
 
-      {/* Decorative water blobs */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-10 left-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float-delayed" />
-
-      {/* Wave decoration at bottom */}
-      <div className="absolute bottom-0 left-0 right-0">
+      {/* Wave into the next section */}
+      <div className="absolute -bottom-px left-0 right-0">
         <svg
           viewBox="0 0 1440 120"
           fill="none"
@@ -25,11 +25,11 @@ export default function Hero() {
         >
           <path
             d="M0 60L60 65C120 70 240 80 360 75C480 70 600 50 720 45C840 40 960 50 1080 60C1200 70 1320 80 1380 85L1440 90V120H0V60Z"
-            fill="hsl(199 89% 48% / 0.05)"
+            fill="hsl(var(--background) / 0.4)"
           />
           <path
             d="M0 80L60 85C120 90 240 100 360 95C480 90 600 70 720 65C840 60 960 70 1080 80C1200 90 1320 100 1380 105L1440 110V120H0V80Z"
-            fill="hsl(199 89% 48% / 0.08)"
+            fill="hsl(var(--background))"
           />
         </svg>
       </div>
@@ -38,17 +38,17 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Text content */}
           <div className="text-center lg:text-left">
-            <div className="fade-rise inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="fade-rise inline-flex items-center gap-2 bg-white/10 text-sky-200 backdrop-blur-sm border border-white/15 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <ShieldCheck className="h-4 w-4" />
               NAFDAC Certified & Approved
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight text-balance mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight text-balance mb-6">
               <WordRise text="Clean Pure Water, Delivered Across Enugu" />
             </h1>
 
             <p
-              className="fade-rise text-lg text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0 text-balance"
+              className="fade-rise text-lg text-white/80 mb-8 max-w-xl mx-auto lg:mx-0 text-balance"
               style={{ '--delay': '450ms' } as CSSProperties}
             >
               From sachet to bottle, UgoWater delivers fresh, safe drinking water straight to your
@@ -69,7 +69,7 @@ export default function Hero() {
               <Button
                 variant="outline"
                 size="lg"
-                className="text-base h-12 px-8 border-primary/30 text-primary hover:bg-primary/5"
+                className="text-base h-12 px-8 bg-transparent border-white/40 text-white hover:bg-white/10 hover:text-white"
                 asChild
               >
                 <Link href="/products">View Products</Link>
@@ -86,7 +86,7 @@ export default function Hero() {
                   {[1, 2, 3, 4].map((i) => (
                     <div
                       key={i}
-                      className="w-8 h-8 rounded-full border-2 border-background bg-gradient-to-br from-primary to-accent flex items-center justify-center"
+                      className="w-8 h-8 rounded-full border-2 border-slate-900 bg-gradient-to-br from-primary to-accent flex items-center justify-center"
                     >
                       <Droplets className="h-3 w-3 text-white" />
                     </div>
@@ -98,7 +98,7 @@ export default function Hero() {
                       <Star key={i} className="h-3 w-3 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
-                  <p className="text-xs text-muted-foreground">10,000+ happy customers</p>
+                  <p className="text-xs text-white/70">10,000+ happy customers</p>
                 </div>
               </div>
             </div>

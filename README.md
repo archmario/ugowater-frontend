@@ -70,3 +70,9 @@ subdomain's document root.
 - `public/images/`: factory photos are from Wikimedia Commons. Credits are listed
   in `src/constants/credits.ts` and shown in the footer; remove each entry as
   the client's own photos replace them
+- `public/videos/`: the home page background video is a Mixkit stock clip
+  (free licence, no credit required). To use the client's own video, replace
+  both files, keeping the names, e.g. with ffmpeg:
+  `ffmpeg -i input.mp4 -t 14 -an -vf scale=1280:-2 -c:v libx264 -crf 30 -movflags +faststart hero-water.mp4`
+  (and the same with `scale=640:-2` for `hero-water-640.mp4`), then replace
+  `public/images/hero-water-poster.webp` with a still from the video

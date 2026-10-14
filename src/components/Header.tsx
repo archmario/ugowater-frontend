@@ -16,6 +16,7 @@ export default function Header() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -23,6 +24,9 @@ export default function Header() {
   useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
+
+  // At the top of the home page the header sits on the dark hero video
+  const overHero = pathname === '/' && !scrolled && !menuOpen;
 
   const isActive = (href: string) => {
     if (href === '/') return pathname === '/';
@@ -44,8 +48,14 @@ export default function Header() {
             <div className="absolute inset-0 bg-primary/20 rounded-full blur-lg -z-10" />
           </div>
           <div className="flex flex-col leading-none">
-            <span className="font-bold text-lg text-foreground">{siteConfig.name}</span>
-            <span className="text-[10px] tracking-widest text-primary font-semibold">
+            <span
+              className={`font-bold text-lg transition-colors ${overHero ? 'text-white' : 'text-foreground'}`}
+            >
+              {siteConfig.name}
+            </span>
+            <span
+              className={`text-[10px] tracking-widest font-semibold transition-colors ${overHero ? 'text-sky-200' : 'text-primary'}`}
+            >
               PURE WATER
             </span>
           </div>
@@ -57,12 +67,18 @@ export default function Header() {
               key={item.href}
               href={item.href}
               className={`text-sm font-medium transition-colors relative group ${
-                isActive(item.href) ? 'text-primary' : 'text-muted-foreground hover:text-primary'
+                isActive(item.href)
+                  ? overHero
+                    ? 'text-white'
+                    : 'text-primary'
+                  : overHero
+                    ? 'text-white/75 hover:text-white'
+                    : 'text-muted-foreground hover:text-primary'
               }`}
             >
               {item.label}
               <span
-                className={`absolute -bottom-1 left-0 h-0.5 w-full bg-primary origin-left transition-transform duration-200 ease-out-strong ${
+                className={`absolute -bottom-1 left-0 h-0.5 w-full origin-left ${overHero ? 'bg-white' : 'bg-primary'} transition-transform duration-200 ease-out-strong ${
                   isActive(item.href) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                 }`}
               />
@@ -71,7 +87,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-2">
-          <ThemeToggle />
+          <ThemeToggle className={overHero ? 'text-white hover:bg-white/10' : undefined} />
           <Button
             size="sm"
             className="bg-primary hover:bg-primary/90 text-primary-foreground"
@@ -82,7 +98,7 @@ export default function Header() {
         </div>
 
         <div className="flex lg:hidden items-center gap-2">
-          <ThemeToggle />
+          <ThemeToggle className={overHero ? 'text-white hover:bg-white/10' : undefined} />
           <button
             className="p-2"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -90,9 +106,9 @@ export default function Header() {
             aria-expanded={menuOpen}
           >
             {menuOpen ? (
-              <X className="h-6 w-6 text-foreground" />
+              <X className={`h-6 w-6 ${overHero ? 'text-white' : 'text-foreground'}`} />
             ) : (
-              <Menu className="h-6 w-6 text-foreground" />
+              <Menu className={`h-6 w-6 ${overHero ? 'text-white' : 'text-foreground'}`} />
             )}
           </button>
         </div>
@@ -107,7 +123,13 @@ export default function Header() {
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
                 className={`text-sm font-medium py-2 transition-colors ${
-                  isActive(item.href) ? 'text-primary' : 'text-muted-foreground hover:text-primary'
+                  isActive(item.href)
+                    ? overHero
+                      ? 'text-white'
+                      : 'text-primary'
+                    : overHero
+                      ? 'text-white/75 hover:text-white'
+                      : 'text-muted-foreground hover:text-primary'
                 }`}
               >
                 {item.label}
