@@ -55,7 +55,7 @@ export const mosaicTiles: MosaicTile[] = [
   {
     images: [
       { src: '/images/bags-of-pure-water.webp', alt: 'Bags of pure water sachets' },
-      { src: '/images/bottle-50cl.webp', alt: 'A 50cl bottle of water' },
+      { src: '/images/product-bottle-50cl.webp', alt: 'A bottle of Omionkpo Table Water' },
     ],
   },
   {

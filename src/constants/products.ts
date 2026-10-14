@@ -10,7 +10,7 @@ export const products: Product[] = [
     size: 'Bag of 20 x 500ml',
     popular: true,
     features: ['500ml per sachet', '20 sachets per bag', 'Factory sealed'],
-    image: '/images/sachet-in-hand.webp',
+    image: '/images/product-sachet.webp',
   },
   {
     id: 'bottle-50cl',
@@ -20,7 +20,7 @@ export const products: Product[] = [
     price: 200,
     size: 'Single bottle, 50cl',
     features: ['50cl bottle', 'Recyclable PET', 'Sport-friendly cap'],
-    image: '/images/bottle-50cl.webp',
+    image: '/images/product-bottle-50cl.webp',
   },
   {
     id: 'bottle-150cl',
@@ -30,7 +30,7 @@ export const products: Product[] = [
     price: 400,
     size: 'Single bottle, 1.5L',
     features: ['1.5 litre bottle', 'Recyclable PET', 'Easy-grip design'],
-    image: '/images/bottle-150cl.webp',
+    image: '/images/product-bottle-150cl.webp',
   },
   {
     id: 'dispenser',
@@ -40,7 +40,7 @@ export const products: Product[] = [
     price: 1500,
     size: 'Gallon, 18.9 litres',
     features: ['18.9L gallon', 'Dispenser compatible', 'Sealed & delivered'],
-    image: '/images/dispenser-gallon.webp',
+    image: '/images/product-dispenser.webp',
   },
   {
     id: 'bulk-sachet',
@@ -50,7 +50,7 @@ export const products: Product[] = [
     price: 2700,
     size: '10 bags, 200 sachets',
     features: ['200 sachets total', 'Bulk discount', 'Ideal for resale'],
-    image: '/images/bags-of-pure-water.webp',
+    image: '/images/product-bulk-sachet.webp',
   },
   {
     id: 'event-pack',
@@ -60,6 +60,6 @@ export const products: Product[] = [
     price: 15000,
     size: 'Custom event pack',
     features: ['Mixed bottles + sachets', 'Custom quantities', 'Event pricing'],
-    image: '/images/stacked-sachet-bags.webp',
+    image: '/images/product-event-pack.webp',
   },
 ];
