@@ -1,0 +1,46 @@
+name: Deploy to Archmario server
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    # Only deploy from the org repo; personal copies skip this job
+    if: github.repository == 'archmario/ugowater-frontend'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static export
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL || 'https://ugowater.archmario.com' }}
+        run: npm run build
+
+      - name: Deploy over SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          SSH_HOST: ${{ secrets.DEPLOY_HOST }}
+          SSH_PORT: ${{ secrets.DEPLOY_PORT }}
+          SSH_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p "$SSH_PORT" "$SSH_HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          # --delete removes old files from DEPLOY_PATH; .well-known holds the SSL
+          # certificate check files, so it's kept
+          rsync -avz --delete --exclude=cgi-bin --exclude=.well-known \
+            -e "ssh -i ~/.ssh/deploy_key -p $SSH_PORT -o StrictHostKeyChecking=yes" \
+            ./out/ "$SSH_USER@$SSH_HOST:$DEPLOY_PATH"

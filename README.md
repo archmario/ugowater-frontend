@@ -30,6 +30,35 @@ public/
 
 To change what the site says, edit `src/config/site.ts` and `src/constants/`.
 
+## Deploy
+
+The site is static: `npm run build` writes plain HTML/CSS/JS to `out/`. No Node
+server is needed.
+
+`.github/workflows/deploy.yml` builds and copies `out/` to the server over SSH
+(rsync) on every push to `main`. It needs these repository secrets (Settings →
+Secrets and variables → Actions):
+
+| Secret           | Value                                                          |
+| ---------------- | -------------------------------------------------------------- |
+| `DEPLOY_SSH_KEY` | Private key for a dedicated CI deploy key                      |
+| `DEPLOY_HOST`    | Server hostname/IP                                             |
+| `DEPLOY_PORT`    | SSH port                                                       |
+| `DEPLOY_USER`    | SSH username                                                   |
+| `DEPLOY_PATH`    | Absolute path to the **subdomain's own** document root         |
+
+`DEPLOY_PATH` must be the ugowater subdomain's folder, never the main archmario
+site's: the sync deletes anything in that folder that isn't in `out/`.
+
+The live address defaults to `https://ugowater.archmario.com`. When the client
+gets their own domain, set a repository variable `SITE_URL` to it (Settings →
+Secrets and variables → Actions → Variables), push, and 301-redirect the old
+subdomain to the new domain.
+
+Manual alternative (FTP): run `npm run build` with `NEXT_PUBLIC_SITE_URL` set,
+then upload the contents of `out/` (including the hidden `.htaccess`) to the
+subdomain's document root.
+
 ## Placeholders to replace before launch
 
 - `src/config/site.ts`: email, address, NAFDAC number, socials
