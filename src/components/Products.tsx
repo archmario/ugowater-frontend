@@ -22,8 +22,20 @@ export default function Products() {
   const totalItems = Object.values(quantities).reduce((a, b) => a + b, 0);
 
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-b from-sky-50 to-background dark:from-background dark:to-background relative pt-32">
-      <div className="container mx-auto px-4">
+    <section className="py-20 md:py-28 bg-gradient-to-b from-sky-50 to-background dark:from-background dark:to-background relative overflow-hidden pt-32">
+      {/* Omionkpo bottles from the launch flyer, either side of the heading */}
+      {['left-[2%] -rotate-6', 'right-[2%] rotate-6'].map((position) => (
+        <img
+          key={position}
+          src="/images/omionkpo-bottle.webp"
+          alt=""
+          aria-hidden="true"
+          className={`hidden lg:block pointer-events-none select-none absolute top-24 h-[520px] w-auto opacity-70 dark:opacity-35 [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_78%)] ${position}`}
+        />
+      ))}
+
+
+      <div className="container mx-auto px-4 relative">
         <div className="fade-rise text-center max-w-2xl mx-auto mb-16">
           <span className="text-sm font-semibold text-primary tracking-widest uppercase">
             Our Products
