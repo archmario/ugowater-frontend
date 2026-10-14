@@ -5,7 +5,7 @@ import Team from '@/components/Team';
 export const metadata: Metadata = pageMetadata({
   title: 'Our Team',
   description:
-    'Meet the team behind UgoWater, a proudly Igbo-owned pure water business based in Enugu.',
+    'Meet the team behind Omionkpo Table Water, a proudly Igbo-owned table water business in Aku, Igbo-Etiti, Enugu State.',
   path: '/team/',
 });
 

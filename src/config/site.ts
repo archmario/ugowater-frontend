@@ -1,22 +1,28 @@
 // Business details used across the site, metadata, sitemap and structured data.
 // The only file that reads env vars. Change the domain via NEXT_PUBLIC_SITE_URL.
 //
-// PLACEHOLDERS: email, address, NAFDAC number and socials are
-// sample values, not the client's real details. Replace before launch.
+// PLACEHOLDERS: NAFDAC number, hours and socials are sample values, not the
+// client's real details. The address is the factory (confirmed). Replace the
+// rest before launch.
 
 export const siteConfig = {
-  name: 'UgoWater',
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ugowater.archmario.com').replace(/\/$/, ''),
-  tagline: 'Pure Water Sachet & Bottle Delivery in Enugu',
+  name: 'Omionkpo Table Water',
+  // Short form for the logo, with "TABLE WATER" underneath
+  shortName: 'Omionkpo',
+  slogan: 'My People First',
+  url: (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://omionkpo.archmario.com').replace(/\/$/, ''),
+  tagline: 'Pure Table Water in Enugu',
   description:
-    'UgoWater delivers clean, NAFDAC-certified pure water sachets and bottled water to homes and businesses across Enugu and the South East. Pay on delivery.',
+    'Omionkpo Table Water: pure, fresh, refreshing table water and sachet water from Aku, Igbo-Etiti, delivered to homes and businesses across Enugu State. Pay on delivery.',
   phone: '+234 902 924 9693',
   // Digits only, international format, for wa.me links
   whatsapp: '2349029249693',
-  email: 'orders@ugowater.com',
+  // Empty until the client sets one up; the site hides email when empty
+  email: '',
   address: {
-    street: '22 Ogui Avenue, Independence Layout',
-    city: 'Enugu',
+    street: 'Plot 1, Udeme Road, Oda Aku',
+    city: 'Aku',
+    lga: 'Igbo-Etiti',
     region: 'Enugu State',
     country: 'NG',
   },
@@ -28,5 +34,5 @@ export const siteConfig = {
     instagram: '',
     twitter: '',
   },
-  areaServed: ['Enugu', 'Nsukka', 'Awka', 'Onitsha', 'Owerri', 'Aba', 'Abakaliki'],
+  areaServed: ['Aku', 'Igbo-Etiti', 'Nsukka', 'Enugu', 'Udi', 'Awgu'],
 };

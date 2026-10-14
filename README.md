@@ -1,6 +1,6 @@
-# UgoWater frontend
+# Omionkpo Table Water frontend
 
-Marketing site for UgoWater, a pure water business in Enugu. Next.js (App Router,
+Marketing site for Omionkpo Table Water ("My People First"), a table water business in Aku, Igbo-Etiti, Enugu State. Next.js (App Router,
 static export), TypeScript, Tailwind CSS, shadcn/ui and lucide-react.
 
 ## Run locally
@@ -47,10 +47,10 @@ Secrets and variables → Actions):
 | `DEPLOY_USER`    | SSH username                                                   |
 | `DEPLOY_PATH`    | Absolute path to the **subdomain's own** document root         |
 
-`DEPLOY_PATH` must be the ugowater subdomain's folder, never the main archmario
+`DEPLOY_PATH` must be the omionkpo subdomain's folder, never the main archmario
 site's: the sync deletes anything in that folder that isn't in `out/`.
 
-The live address defaults to `https://ugowater.archmario.com`. When the client
+The live address defaults to `https://omionkpo.archmario.com`. When the client
 gets their own domain, set a repository variable `SITE_URL` to it (Settings →
 Secrets and variables → Actions → Variables), push, and 301-redirect the old
 subdomain to the new domain.
@@ -61,7 +61,7 @@ subdomain's document root.
 
 ## Placeholders to replace before launch
 
-- `src/config/site.ts`: email, address, NAFDAC number, socials
+- `src/config/site.ts`: email (empty, so hidden), NAFDAC number, hours, socials
   (sample values, not the client's real details)
 - `src/constants/team.ts`: CEO and staff photos (empty on purpose, the page
   shows "photo coming soon"), staff names, CEO bio

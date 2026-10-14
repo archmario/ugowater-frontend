@@ -40,7 +40,7 @@ export default function Hero() {
           <div className="text-center lg:text-left">
             <div className="fade-rise inline-flex items-center gap-2 bg-white/10 text-sky-200 backdrop-blur-sm border border-white/15 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <ShieldCheck className="h-4 w-4" />
-              NAFDAC Certified & Approved
+              Pure • Fresh • Refreshing
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight text-balance mb-6">
@@ -51,8 +51,8 @@ export default function Hero() {
               className="fade-rise text-lg text-white/80 mb-8 max-w-xl mx-auto lg:mx-0 text-balance"
               style={{ '--delay': '450ms' } as CSSProperties}
             >
-              From sachet to bottle, UgoWater delivers fresh, safe drinking water straight to your
-              doorstep. Trusted by thousands of families and businesses across the South East.
+              From sachet to bottle, Omionkpo Table Water delivers fresh, safe drinking water
+              straight to your doorstep across Enugu State. My people first.
             </p>
 
             <div

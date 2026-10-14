@@ -3,9 +3,9 @@ import { pageMetadata } from '@/utils/metadata';
 import Products from '@/components/Products';
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Pure Water Sachets & Bottled Water Prices',
+  title: 'Table Water & Sachet Water Prices',
   description:
-    'Pure water sachet, bottled water and dispenser refill prices in Enugu. NAFDAC-certified, factory-sealed and delivered to your door. Bulk and event orders available.',
+    'Omionkpo table water, sachet water and dispenser refill prices in Enugu State. Factory-sealed and delivered to your door. Bulk and event orders available.',
   path: '/products/',
 });
 

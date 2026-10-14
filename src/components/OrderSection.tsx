@@ -13,7 +13,7 @@ import { formatNaira } from '@/utils/format';
 export default function OrderSection() {
   const { values, setField, submitted, handleSubmit, reset } = useOrderForm();
 
-  const fullAddress = `${siteConfig.address.street}, ${siteConfig.address.city}, ${siteConfig.address.region}, Nigeria`;
+  const fullAddress = `${siteConfig.address.street}, ${siteConfig.address.city}, ${siteConfig.address.lga}, ${siteConfig.address.region}, Nigeria`;
   const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(fullAddress)}&output=embed`;
   const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`;
 
@@ -24,16 +24,16 @@ export default function OrderSection() {
       value: siteConfig.phone,
       href: `tel:${siteConfig.phone.replace(/\s/g, '')}`,
     },
-    {
+    ...(siteConfig.email ? [{
       icon: Mail,
       label: 'Email Us',
       value: siteConfig.email,
       href: `mailto:${siteConfig.email}`,
-    },
+    }] : []),
     {
       icon: MapPin,
       label: 'Visit Our Factory',
-      value: `${siteConfig.address.street}, ${siteConfig.address.city}`,
+      value: `${siteConfig.address.street}, ${siteConfig.address.city}, ${siteConfig.address.lga}`,
       href: mapLink,
     },
     {
@@ -72,7 +72,7 @@ export default function OrderSection() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-foreground">{siteConfig.name}</h3>
-                  <p className="text-sm text-muted-foreground">Pure water, delivered with care</p>
+                  <p className="text-sm text-muted-foreground">{siteConfig.slogan}</p>
                 </div>
               </div>
 

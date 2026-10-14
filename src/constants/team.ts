@@ -3,7 +3,7 @@ import type { Ceo, TeamMember } from '@/types';
 export const ceo: Ceo = {
   name: 'Ugo Okafor',
   title: 'Managing Director & CEO',
-  bio: 'Ugo founded UgoWater in 2015 with a simple mission: bring clean, affordable water to every home in the South East. A proud Enugu indigene and Nnamdi Azikiwe University graduate, he built the company from a single sachet sealing machine to one of the most trusted water brands in the region.',
+  bio: 'Ugo founded Omionkpo Table Water with a simple mission: bring clean, affordable water to every home, starting with his own people in Aku. That is what "My People First" means: every sachet and bottle is made the way he would want it for his own family.',
   image: '',
   quote:
     'Clean water is not a luxury, it is a right. Every sachet we seal is a promise to our people.',

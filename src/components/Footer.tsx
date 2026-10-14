@@ -21,16 +21,15 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-2 mb-4">
               <Droplets className="h-8 w-8 text-primary" />
               <div className="flex flex-col leading-none">
-                <span className="font-bold text-lg">{siteConfig.name}</span>
+                <span className="font-bold text-lg">{siteConfig.shortName}</span>
                 <span className="text-[10px] tracking-widest text-primary font-semibold">
-                  PURE WATER
+                  TABLE WATER
                 </span>
               </div>
             </Link>
             <p className="text-sm text-white/60 leading-relaxed mb-5">
-              Bringing clean, NAFDAC-certified pure water to homes and
-              businesses across Enugu and the South East. From sachet to
-              bottle, we deliver freshness you can trust.
+              Pure, fresh, refreshing table water from Aku, Igbo-Etiti, delivered to homes and
+              businesses across Enugu State. {siteConfig.slogan}.
             </p>
             {socialLinks.length > 0 && (
               <div className="flex items-center gap-3">
@@ -97,19 +96,22 @@ export default function Footer() {
                   {siteConfig.phone}
                 </a>
               </li>
-              <li className="flex items-start gap-2.5">
-                <Mail className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                <a
-                  href={`mailto:${siteConfig.email}`}
-                  className="text-sm text-white/60 hover:text-primary"
-                >
-                  {siteConfig.email}
-                </a>
-              </li>
+              {siteConfig.email && (
+                <li className="flex items-start gap-2.5">
+                  <Mail className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                  <a
+                    href={`mailto:${siteConfig.email}`}
+                    className="text-sm text-white/60 hover:text-primary"
+                  >
+                    {siteConfig.email}
+                  </a>
+                </li>
+              )}
               <li className="flex items-start gap-2.5">
                 <MapPin className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-sm text-white/60">
-                  {siteConfig.address.street}, {siteConfig.address.city}, Nigeria
+                  {siteConfig.address.street}, {siteConfig.address.city}, {siteConfig.address.lga},{' '}
+                  {siteConfig.address.region}
                 </span>
               </li>
             </ul>
@@ -119,19 +121,14 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-white/50">
-            &copy; {new Date().getFullYear()} {siteConfig.name}. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
-          <span className="text-sm text-white/50">
-            NAFDAC No: {siteConfig.nafdacNumber}
-          </span>
+          <span className="text-sm text-white/50">NAFDAC No: {siteConfig.nafdacNumber}</span>
         </div>
 
         {photoCredits.length > 0 && (
           <details className="mt-6 text-xs text-white/40">
-            <summary className="cursor-pointer hover:text-white/60">
-              Photo credits
-            </summary>
+            <summary className="cursor-pointer hover:text-white/60">Photo credits</summary>
             <ul className="mt-2 space-y-1">
               {photoCredits.map((credit) => (
                 <li key={credit.file}>

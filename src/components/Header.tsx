@@ -53,12 +53,12 @@ export default function Header() {
             <span
               className={`font-bold text-lg transition-colors ${overHero ? 'text-white' : 'text-foreground'}`}
             >
-              {siteConfig.name}
+              {siteConfig.shortName}
             </span>
             <span
               className={`text-[10px] tracking-widest font-semibold transition-colors ${overHero ? 'text-sky-200' : 'text-primary'}`}
             >
-              PURE WATER
+              TABLE WATER
             </span>
           </div>
         </Link>
