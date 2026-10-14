@@ -27,7 +27,8 @@ export const siteConfig = {
     country: 'NG',
   },
   hours: 'Mon - Sat: 7:00 AM - 8:00 PM',
-  nafdacNumber: '03-1234',
+  // Empty until NAFDAC registration; the footer hides it when empty
+  nafdacNumber: '',
   // Leave a URL empty to hide that icon
   socials: {
     facebook: '',

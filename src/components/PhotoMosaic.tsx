@@ -60,7 +60,7 @@ export default function PhotoMosaic() {
       <Tile tile={feature} delay={0} sizes="(min-width: 768px) 50vw, 100vw">
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/10 to-transparent" />
         <p className="absolute bottom-0 left-0 right-0 p-5 md:p-8 text-white text-lg md:text-2xl font-bold text-balance">
-          Every drop is a promise of purity, delivered with care to families across the South East.
+          Every drop is a promise of purity, delivered with care to families across Enugu State.
         </p>
       </Tile>
       {rest.map((tile, i) => (

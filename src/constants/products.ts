@@ -7,7 +7,6 @@ export const products: Product[] = [
     description:
       'The classic Naija pure water. A bag of 20 sachets, each 500ml of clean, refreshing water. Perfect for everyday drinking.',
     price: 300,
-    oldPrice: 350,
     size: 'Bag of 20 x 500ml',
     popular: true,
     features: ['500ml per sachet', '20 sachets per bag', 'Factory sealed'],
@@ -39,7 +38,6 @@ export const products: Product[] = [
     description:
       'Refill your water dispenser with our premium-grade gallon. Delivered clean and sealed, straight to your door.',
     price: 1500,
-    oldPrice: 1800,
     size: 'Gallon, 18.9 litres',
     features: ['18.9L gallon', 'Dispenser compatible', 'Sealed & delivered'],
     image: '/images/dispenser-gallon.webp',
@@ -50,7 +48,6 @@ export const products: Product[] = [
     description:
       'Stock up for your shop, event, or office. 10 bags (200 sachets) delivered at a special discounted price.',
     price: 2700,
-    oldPrice: 3000,
     size: '10 bags, 200 sachets',
     features: ['200 sachets total', 'Bulk discount', 'Ideal for resale'],
     image: '/images/bags-of-pure-water.webp',

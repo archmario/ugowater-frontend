@@ -45,7 +45,7 @@ export default function Products() {
           </h1>
           <p className="text-muted-foreground text-balance">
             From the everyday sachet to big dispenser gallons, we have the right water for you. All
-            products are NAFDAC certified and factory-sealed.
+            products are factory-sealed.
           </p>
         </div>
 

@@ -42,11 +42,6 @@ export interface MosaicTile {
   span?: string;
 }
 
-export interface Stat {
-  value: string;
-  label: string;
-}
-
 export interface TeamMember {
   name: string;
   role: string;
@@ -62,12 +57,11 @@ export interface Ceo {
   quote: string;
 }
 
-export interface Review {
-  name: string;
-  location: string;
-  text: string;
-  rating: number;
-  initials: string;
+// What every customer can count on; shown until real reviews come in
+export interface CustomerPromise {
+  icon: LucideIcon;
+  title: string;
+  description: string;
 }
 
 export interface NavItem {

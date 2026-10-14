@@ -16,7 +16,7 @@ export default function Team() {
             Meet the Omionkpo Team
           </h1>
           <p className="text-muted-foreground text-balance">
-            We are a proudly Igbo-owned business, rooted in Enugu and serving the entire South East.
+            We are a proudly Igbo-owned business, rooted in Aku, Igbo-Etiti and serving communities across Enugu State.
             Meet the leaders who make it happen.
           </p>
         </div>

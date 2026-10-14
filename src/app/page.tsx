@@ -1,10 +1,10 @@
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import Gallery from '@/components/Gallery';
-import Testimonials from '@/components/Testimonials';
+import WhatToExpect from '@/components/WhatToExpect';
 import OrderSection from '@/components/OrderSection';
 import Link from 'next/link';
-import { ArrowRight, Droplets, ShieldCheck, Truck, Star } from 'lucide-react';
+import { ArrowRight, Droplets, ShieldCheck, Truck, Wallet } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function Home() {
@@ -30,7 +30,7 @@ export default function Home() {
               </h2>
               <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto text-balance">
                 Order now and pay on delivery. From a single bag of sachets to bulk bottles, we have
-                you covered across the South East.
+                you covered across Enugu State.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
@@ -56,9 +56,9 @@ export default function Home() {
 
               <div className="flex flex-wrap items-center justify-center gap-8 mt-12">
                 {[
-                  { icon: ShieldCheck, label: 'NAFDAC Certified' },
-                  { icon: Truck, label: 'Fast Delivery' },
-                  { icon: Star, label: '10,000+ Customers' },
+                  { icon: ShieldCheck, label: 'Factory Sealed' },
+                  { icon: Truck, label: 'Delivered to Your Door' },
+                  { icon: Wallet, label: 'Pay on Delivery' },
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-2 text-white/90">
                     <item.icon className="h-5 w-5" />
@@ -70,7 +70,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Testimonials />
+      <WhatToExpect />
       <OrderSection />
     </>
   );

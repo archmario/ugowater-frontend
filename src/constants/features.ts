@@ -4,9 +4,9 @@ import type { Feature } from '@/types';
 export const features: Feature[] = [
   {
     icon: ShieldCheck,
-    title: 'NAFDAC Certified',
+    title: 'Hygienically Produced',
     description:
-      'Every batch is tested and approved by NAFDAC. Our water meets the highest safety standards in Nigeria.',
+      'Treated, filtered and sealed in a clean facility, so every sachet and bottle is safe to drink.',
     color: 'text-primary',
     bg: 'bg-primary/10',
   },
@@ -14,7 +14,7 @@ export const features: Feature[] = [
     icon: Truck,
     title: 'Fast Delivery',
     description:
-      'Same-day delivery within Enugu and next-day across the South East. We move fast so you stay refreshed.',
+      'We deliver to homes, shops and events across Aku and Enugu State. Order on WhatsApp and we bring it to you.',
     color: 'text-accent',
     bg: 'bg-accent/10',
   },
@@ -38,7 +38,7 @@ export const features: Feature[] = [
     icon: Droplets,
     title: 'Pure Filtration',
     description:
-      'Our 7-stage filtration process removes impurities while keeping the natural minerals your body needs.',
+      'Our multi-stage filtration removes impurities, leaving water that is clean, clear and fresh.',
     color: 'text-sky-500',
     bg: 'bg-sky-500/10',
   },

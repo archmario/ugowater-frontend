@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react';
 import Link from 'next/link';
-import { Droplets, ShieldCheck, Truck, Star } from 'lucide-react';
+import { MapPin, ShieldCheck, Truck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import SmartImage from '@/components/SmartImage';
 import WordRise from '@/components/WordRise';
@@ -81,25 +81,15 @@ export default function Hero() {
               className="fade-rise flex flex-wrap items-center gap-6 justify-center lg:justify-start"
               style={{ '--delay': '650ms' } as CSSProperties}
             >
-              <div className="flex items-center gap-2">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div
-                      key={i}
-                      className="w-8 h-8 rounded-full border-2 border-slate-900 bg-gradient-to-br from-primary to-accent flex items-center justify-center"
-                    >
-                      <Droplets className="h-3 w-3 text-white" />
-                    </div>
-                  ))}
-                </div>
-                <div className="text-left">
-                  <div className="flex items-center gap-1">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="h-3 w-3 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <p className="text-xs text-white/70">10,000+ happy customers</p>
-                </div>
+              <div className="flex items-center gap-3 text-white/80">
+                <span className="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                  <MapPin className="h-4 w-4 text-white" />
+                </span>
+                <p className="text-sm text-left">
+                  Now available in Aku, Igbo-Etiti
+                  <br />
+                  <span className="text-white/60">and across Enugu State</span>
+                </p>
               </div>
             </div>
           </div>
@@ -124,7 +114,7 @@ export default function Hero() {
                 </div>
                 <div>
                   <p className="text-sm font-bold text-foreground">Fast Delivery</p>
-                  <p className="text-xs text-muted-foreground">Same day in Enugu</p>
+                  <p className="text-xs text-muted-foreground">Straight to your door</p>
                 </div>
               </div>
 
@@ -133,7 +123,7 @@ export default function Hero() {
                   <ShieldCheck className="h-5 w-5 text-accent" />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-foreground">100% Safe</p>
+                  <p className="text-sm font-bold text-foreground">Factory Sealed</p>
                   <p className="text-xs text-muted-foreground">Purified & filtered</p>
                 </div>
               </div>

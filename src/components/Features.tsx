@@ -11,7 +11,7 @@ export default function Features() {
             Why Choose Us
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4 text-balance">
-            Trusted by Thousands Across Nigeria
+            Pure Table Water, Made With Care in Aku
           </h2>
           <p className="text-muted-foreground text-balance">
             We are not just another water company. We are your neighbours, committed to bringing

@@ -123,7 +123,9 @@ export default function Footer() {
           <p className="text-sm text-white/50">
             &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
-          <span className="text-sm text-white/50">NAFDAC No: {siteConfig.nafdacNumber}</span>
+          {siteConfig.nafdacNumber && (
+            <span className="text-sm text-white/50">NAFDAC No: {siteConfig.nafdacNumber}</span>
+          )}
         </div>
 
         {photoCredits.length > 0 && (

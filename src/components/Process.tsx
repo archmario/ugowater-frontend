@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react';
 import SmartImage from '@/components/SmartImage';
-import { processSteps, processStats } from '@/constants/process';
+import { processSteps } from '@/constants/process';
 
 export default function Process() {
   return (
@@ -56,16 +56,6 @@ export default function Process() {
                   <p className="text-sm text-white/60 leading-relaxed">{step.description}</p>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Stats bar */}
-        <div data-reveal className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-          {processStats.map((stat, i) => (
-            <div key={i} className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-primary">{stat.value}</p>
-              <p className="text-sm text-white/60 mt-1">{stat.label}</p>
             </div>
           ))}
         </div>

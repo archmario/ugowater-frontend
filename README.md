@@ -65,8 +65,10 @@ subdomain's document root.
   (sample values, not the client's real details)
 - `src/constants/team.ts`: CEO and staff photos (empty on purpose, the page
   shows "photo coming soon"), staff names, CEO bio
-- `src/constants/reviews.ts`: sample reviews, not real customers
-- `src/constants/process.ts`: stats (10M+ sachets etc.) are invented
+- `src/constants/promises.ts`: "What to Expect" cards stand in for reviews
+  while the brand is new; replace with real customer reviews when there are some
+- NAFDAC: the number (`site.ts`) is empty and hidden, and the site makes no
+  NAFDAC claims; add both once the products are registered
 - `public/images/`: factory photos are from Wikimedia Commons. Credits are listed
   in `src/constants/credits.ts` and shown in the footer; remove each entry as
   the client's own photos replace them

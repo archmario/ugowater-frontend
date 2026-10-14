@@ -1,22 +1,21 @@
 import { Filter, FlaskConical, Truck, PackageCheck } from 'lucide-react';
-import type { ProcessStep, Stat } from '@/types';
+import type { ProcessStep } from '@/types';
 
 export const processSteps: ProcessStep[] = [
   {
     number: '01',
     icon: Filter,
-    title: '7-Stage Filtration',
+    title: 'Multi-Stage Filtration',
     description:
-      'Raw water passes through seven filtration stages, removing sediments, chemicals, and bacteria for crystal-clear purity.',
+      'Raw water passes through several filtration stages, removing sediments, chemicals, and bacteria for crystal-clear purity.',
     image: '/images/filtration-tanks.webp',
     imageAlt: 'Water storage tanks and stainless steel filtration units',
   },
   {
     number: '02',
     icon: FlaskConical,
-    title: 'Laboratory Testing',
-    description:
-      'Every batch is tested in our certified lab for pH balance, microbial content, and mineral quality before approval.',
+    title: 'Quality Checks',
+    description: 'Water is checked for clarity, taste and safety before it is packaged.',
     image: '/images/lab-testing.webp',
     imageAlt: 'Water quality testing equipment in a laboratory',
   },
@@ -38,11 +37,4 @@ export const processSteps: ProcessStep[] = [
     image: '/images/stacked-sachet-bags.webp',
     imageAlt: 'Bags of sachet water stacked for delivery',
   },
-];
-
-export const processStats: Stat[] = [
-  { value: '10M+', label: 'Sachets Produced Monthly' },
-  { value: '5,000+', label: 'Businesses Served' },
-  { value: '15', label: 'Cities Reached' },
-  { value: '100%', label: 'NAFDAC Compliant' },
 ];
