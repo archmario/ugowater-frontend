@@ -33,7 +33,14 @@ export default function Products() {
           className={`hidden lg:block pointer-events-none select-none absolute top-24 h-[520px] w-auto opacity-70 dark:opacity-35 [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_78%)] ${position}`}
         />
       ))}
-
+      {/* Phones and tablets: one faint bottle tucked behind the right edge, so it
+          adds a brand touch without competing with the heading */}
+      <img
+        src="/images/omionkpo-bottle.webp"
+        alt=""
+        aria-hidden="true"
+        className="lg:hidden pointer-events-none select-none absolute -right-12 top-20 h-[400px] w-auto rotate-12 opacity-[0.18] dark:opacity-[0.12] [mask-image:linear-gradient(to_bottom,black_55%,transparent)]"
+      />
 
       <div className="container mx-auto px-4 relative">
         <div className="fade-rise text-center max-w-2xl mx-auto mb-16">
