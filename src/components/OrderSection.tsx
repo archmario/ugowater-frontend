@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { siteConfig } from '@/config/site';
+import VerifiedBadges from '@/components/VerifiedBadges';
 import { products } from '@/constants/products';
 import { useOrderForm } from '@/hooks/order/useOrderForm';
 import { formatNaira } from '@/utils/format';
@@ -114,6 +115,8 @@ export default function OrderSection() {
                 Cash, transfer, or POS all accepted.
               </p>
             </div>
+
+            <VerifiedBadges className="sm:grid-cols-1" />
           </div>
 
           {/* Order form */}

@@ -56,7 +56,7 @@ export default function Home() {
 
               <div className="flex flex-wrap items-center justify-center gap-8 mt-12">
                 {[
-                  { icon: ShieldCheck, label: 'Factory Sealed' },
+                  { icon: ShieldCheck, label: 'NAFDAC Registered' },
                   { icon: Truck, label: 'Delivered to Your Door' },
                   { icon: Wallet, label: 'Pay on Delivery' },
                 ].map((item, idx) => (

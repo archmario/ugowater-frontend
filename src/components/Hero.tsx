@@ -4,6 +4,7 @@ import { MapPin, ShieldCheck, Truck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import SmartImage from '@/components/SmartImage';
 import WordRise from '@/components/WordRise';
+import { siteConfig } from '@/config/site';
 import HeroVideo from '@/components/HeroVideo';
 
 export default function Hero() {
@@ -40,7 +41,7 @@ export default function Hero() {
           <div className="text-center lg:text-left">
             <div className="fade-rise inline-flex items-center gap-2 bg-white/10 text-sky-200 backdrop-blur-sm border border-white/15 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <ShieldCheck className="h-4 w-4" />
-              Pure • Fresh • Refreshing
+              NAFDAC Registered · {siteConfig.nafdac.number}
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight text-balance mb-6">

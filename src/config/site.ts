@@ -1,9 +1,9 @@
 // Business details used across the site, metadata, sitemap and structured data.
 // The only file that reads env vars. Change the domain via NEXT_PUBLIC_SITE_URL.
 //
-// PLACEHOLDERS: NAFDAC number, hours and socials are sample values, not the
-// client's real details. The address is the factory (confirmed). Replace the
-// rest before launch.
+// Verified with the client: address (the factory), phone/WhatsApp, NAFDAC
+// registration (checked on NAFDAC's portal) and CAC business name (checked on
+// CAC's public search). Still placeholders: opening hours and socials.
 
 export const siteConfig = {
   name: 'Omionkpo Table Water',
@@ -24,11 +24,25 @@ export const siteConfig = {
     city: 'Aku',
     lga: 'Igbo-Etiti',
     region: 'Enugu State',
+    postalCode: '411108',
     country: 'NG',
   },
   hours: 'Mon - Sat: 7:00 AM - 8:00 PM',
-  // Empty until NAFDAC registration; the footer hides it when empty
-  nafdacNumber: '',
+  // As shown on NAFDAC's verification portal (Product: OMIONKPO TABLE WATER,
+  // manufacturer UMUEZE PURE WATER SERVICES, approved 2026-09-29, expires
+  // 2028-09-28: renew before then)
+  nafdac: {
+    number: 'A1-112190L',
+    product: 'Omionkpo Table Water',
+    expires: '2028-09-28',
+    verifyUrl: 'https://registration.nafdac.gov.ng/Home/VerifyProduct',
+  },
+  // The registered business behind the Omionkpo brand (CAC business name)
+  cac: {
+    name: 'Umueze Pure Water Services',
+    number: '8365242',
+    verifyUrl: 'https://icrp.cac.gov.ng/public-search',
+  },
   // Leave a URL empty to hide that icon
   socials: {
     facebook: '',

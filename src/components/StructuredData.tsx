@@ -13,6 +13,7 @@ export default function StructuredData() {
     description: siteConfig.description,
     url: `${siteConfig.url}/`,
     image: `${siteConfig.url}/og-image.jpg`,
+    legalName: siteConfig.cac.name,
     telephone: siteConfig.phone,
     ...(siteConfig.email && { email: siteConfig.email }),
     priceRange: '₦',
@@ -21,6 +22,7 @@ export default function StructuredData() {
       streetAddress: siteConfig.address.street,
       addressLocality: `${siteConfig.address.city}, ${siteConfig.address.lga}`,
       addressRegion: siteConfig.address.region,
+      postalCode: siteConfig.address.postalCode,
       addressCountry: siteConfig.address.country,
     },
     openingHoursSpecification: {

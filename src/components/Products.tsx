@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Plus, Minus, ShoppingBag, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import SmartImage from '@/components/SmartImage';
+import VerifiedBadges from '@/components/VerifiedBadges';
 import { products } from '@/constants/products';
 import { cn } from '@/utils/cn';
 import { formatNaira } from '@/utils/format';
@@ -52,9 +53,11 @@ export default function Products() {
           </h1>
           <p className="text-muted-foreground text-balance">
             From the everyday sachet to big dispenser gallons, we have the right water for you. All
-            products are factory-sealed.
+            products are NAFDAC registered and factory-sealed.
           </p>
         </div>
+
+        <VerifiedBadges className="max-w-3xl mx-auto mb-12" />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {products.map((product, idx) => {

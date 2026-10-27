@@ -61,14 +61,14 @@ subdomain's document root.
 
 ## Placeholders to replace before launch
 
-- `src/config/site.ts`: email (empty, so hidden), NAFDAC number, hours, socials
+- `src/config/site.ts`: email (empty, so hidden), opening hours, socials
   (sample values, not the client's real details)
 - `src/constants/team.ts`: CEO and staff photos (empty on purpose, the page
   shows "photo coming soon"), staff names, CEO bio
 - `src/constants/promises.ts`: "What to Expect" cards stand in for reviews
   while the brand is new; replace with real customer reviews when there are some
-- NAFDAC: the number (`site.ts`) is empty and hidden, and the site makes no
-  NAFDAC claims; add both once the products are registered
+- NAFDAC registration A1-112190L expires on 28 Sept 2028 (`site.ts`); renew it
+  before then and update the date
 - `public/images/`: factory photos are from Wikimedia Commons. Credits are listed
   in `src/constants/credits.ts` and shown in the footer; remove each entry as
   the client's own photos replace them

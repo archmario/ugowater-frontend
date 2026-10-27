@@ -4,9 +4,9 @@ import type { Feature } from '@/types';
 export const features: Feature[] = [
   {
     icon: ShieldCheck,
-    title: 'Hygienically Produced',
+    title: 'NAFDAC Registered',
     description:
-      'Treated, filtered and sealed in a clean facility, so every sachet and bottle is safe to drink.',
+      'Registered with NAFDAC (Reg. No. A1-112190L), and treated, filtered and sealed in a clean facility, so every sachet and bottle is safe to drink.',
     color: 'text-primary',
     bg: 'bg-primary/10',
   },
