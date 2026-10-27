@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Droplets, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { siteConfig } from '@/config/site';
@@ -44,23 +44,23 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="relative">
-            <Droplets className="h-8 w-8 text-primary transition-transform group-hover:scale-110" />
-            <div className="absolute inset-0 bg-primary/20 rounded-full blur-lg -z-10" />
-          </div>
-          <div className="flex flex-col leading-none">
-            <span
-              className={`font-bold text-lg transition-colors ${overHero ? 'text-white' : 'text-foreground'}`}
-            >
-              {siteConfig.shortName}
-            </span>
-            <span
-              className={`text-[10px] tracking-widest font-semibold transition-colors ${overHero ? 'text-sky-200' : 'text-primary'}`}
-            >
-              TABLE WATER
-            </span>
-          </div>
+        <Link href="/" className="flex items-center" aria-label={`${siteConfig.name}, home`}>
+          {/* Colour logo on light backgrounds; white logo over the dark hero and in dark mode */}
+          <img
+            src="/brand/omionkpo-logo-horizontal.svg"
+            alt={siteConfig.name}
+            width={220}
+            height={44}
+            className={`h-10 w-auto sm:h-11 ${overHero ? 'hidden' : 'block dark:hidden'}`}
+          />
+          <img
+            src="/brand/omionkpo-logo-horizontal-white.svg"
+            alt=""
+            aria-hidden="true"
+            width={220}
+            height={44}
+            className={`h-10 w-auto sm:h-11 ${overHero ? 'block' : 'hidden dark:block'}`}
+          />
         </Link>
 
         <nav aria-label="Main" className="hidden lg:flex items-center gap-7">

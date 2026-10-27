@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Droplets, Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import { navItems } from '@/constants/navigation';
 import { products } from '@/constants/products';
@@ -18,14 +18,14 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand column */}
           <div>
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <Droplets className="h-8 w-8 text-primary" />
-              <div className="flex flex-col leading-none">
-                <span className="font-bold text-lg">{siteConfig.shortName}</span>
-                <span className="text-[10px] tracking-widest text-primary font-semibold">
-                  TABLE WATER
-                </span>
-              </div>
+            <Link href="/" className="inline-block mb-4" aria-label={`${siteConfig.name}, home`}>
+              <img
+                src="/brand/omionkpo-logo-horizontal-white.svg"
+                alt={siteConfig.name}
+                width={220}
+                height={44}
+                className="h-11 w-auto"
+              />
             </Link>
             <p className="text-sm text-white/60 leading-relaxed mb-5">
               Pure, fresh, refreshing table water from Aku, Igbo-Etiti, delivered to homes and
