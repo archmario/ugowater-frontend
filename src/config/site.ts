@@ -14,9 +14,9 @@ export const siteConfig = {
   tagline: 'Pure Table Water in Enugu',
   description:
     'Omionkpo Table Water: pure, fresh, refreshing table water and sachet water from Aku, Igbo-Etiti, delivered to homes and businesses across Enugu State. Pay on delivery.',
-  phone: '+234 902 924 9693',
+  phone: '+234 901 234 8017',
   // Digits only, international format, for wa.me links
-  whatsapp: '2349029249693',
+  whatsapp: '2349012348017',
   // Empty until the client sets one up; the site hides email when empty
   email: '',
   address: {
