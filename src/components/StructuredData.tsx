@@ -13,7 +13,6 @@ export default function StructuredData() {
     description: siteConfig.description,
     url: `${siteConfig.url}/`,
     image: `${siteConfig.url}/og-image.jpg`,
-    legalName: siteConfig.cac.name,
     telephone: siteConfig.phone,
     ...(siteConfig.email && { email: siteConfig.email }),
     priceRange: '₦',

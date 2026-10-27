@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
-import VerifiedBadges from '@/components/VerifiedBadges';
 import { siteConfig } from '@/config/site';
 import { navItems } from '@/constants/navigation';
 import { products } from '@/constants/products';
@@ -119,15 +118,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <VerifiedBadges tone="dark" className="mb-10" />
-
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-white/50">
             &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
           <span className="text-sm text-white/50">
-            NAFDAC Reg. No. {siteConfig.nafdac.number} · CAC No. {siteConfig.cac.number}
+            NAFDAC Registered · {siteConfig.nafdac.number}
           </span>
         </div>
 

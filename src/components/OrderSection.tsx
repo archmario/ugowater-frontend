@@ -116,7 +116,7 @@ export default function OrderSection() {
               </p>
             </div>
 
-            <VerifiedBadges className="sm:grid-cols-1" />
+            <VerifiedBadges />
           </div>
 
           {/* Order form */}
