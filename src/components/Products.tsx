@@ -24,13 +24,13 @@ export default function Products() {
   return (
     <section className="py-20 md:py-28 bg-gradient-to-b from-sky-50 to-background dark:from-background dark:to-background relative overflow-hidden pt-32">
       {/* Omionkpo bottles from the launch flyer, either side of the heading */}
-      {['left-[2%] -rotate-6', 'right-[2%] rotate-6'].map((position) => (
+      {['-left-4 -rotate-6', '-right-4 rotate-6'].map((position) => (
         <img
           key={position}
           src="/images/omionkpo-bottle.webp"
           alt=""
           aria-hidden="true"
-          className={`hidden lg:block pointer-events-none select-none absolute top-24 h-[520px] w-auto opacity-70 dark:opacity-35 [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_78%)] ${position}`}
+          className={`hidden lg:block pointer-events-none select-none absolute top-28 h-[460px] w-auto opacity-25 dark:opacity-15 [mask-image:linear-gradient(to_bottom,black_60%,transparent)] ${position}`}
         />
       ))}
       {/* Phones and tablets: one faint bottle tucked behind the right edge, so it
