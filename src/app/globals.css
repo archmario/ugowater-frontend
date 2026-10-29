@@ -529,6 +529,16 @@ body:has(.header.menu-open) .fab { opacity: 0; pointer-events: none; transition:
 .header.menu-open .burger { background: transparent; border: 0; }
 .header.menu-open .burger:focus-visible { box-shadow: 0 0 0 2px #8fb0ff; }
 
+/* ---------- No tap flash on phones ----------
+   Phones paint a light box over anything tapped; turn it off everywhere.
+   Mouse/touch clicks get no outline, keyboard users still get a clear ring. */
+html { -webkit-tap-highlight-color: transparent; }
+a, button, [role="button"], input, select, textarea, summary { -webkit-tap-highlight-color: transparent; }
+a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
+.links a.link:focus-visible, .btn:focus-visible, .area:focus-visible, .pcard:focus-visible {
+  outline: 2px solid #8fb0ff; outline-offset: 4px; border-radius: 6px;
+}
+
 /* ---------- Floating WhatsApp button in brand light blue ---------- */
 .fab {
   background: linear-gradient(140deg, #5aa2ff 0%, #2f6bff 55%, #1446d9 100%);
