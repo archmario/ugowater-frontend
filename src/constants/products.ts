@@ -22,6 +22,16 @@ export const products: Product[] = [
     unitPlural: 'packs',
     image: '/images/omionkpo-bottles.webp',
   },
+  {
+    id: 'can',
+    tag: 'PREMIUM CAN',
+    name: 'Premium water can pack',
+    description: 'Omionkpo Premium Water in sealed cans. Crisp, easy to chill, and great for events and gifting.',
+    price: 3000,
+    unit: 'pack',
+    unitPlural: 'packs',
+    image: '/images/omionkpo-premium-cans.webp',
+  },
 ];
 
 // Delivery areas shown as buttons in the order calculator

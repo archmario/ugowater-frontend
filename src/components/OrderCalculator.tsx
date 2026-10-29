@@ -24,8 +24,8 @@ export default function OrderCalculator() {
   const message = `Hi Omionkpo, I want to order ${qty} ${qty === 1 ? product.unit : product.unitPlural} of ${product.name.toLowerCase()}, delivered to ${area}. Estimated total ${formatNaira(total)}.`;
 
   return (
-    <div className="row" style={{ gap: 32, alignItems: 'stretch' }}>
-      <div className="col grid-2" data-reveal="left">
+    <div className="stack" style={{ gap: 32 }}>
+      <div className="product-grid" data-reveal>
         {products.map((p) => (
           <button key={p.id} type="button" className="pcard" aria-pressed={p.id === productId} onClick={() => setProductId(p.id)}>
             <span className="pimg">
@@ -50,7 +50,7 @@ export default function OrderCalculator() {
         ))}
       </div>
 
-      <div className="col-sm order" data-reveal="right">
+      <div className="order order-wide" data-reveal>
         <span className="display" style={{ fontWeight: 800, fontSize: 20 }}>Your order</span>
 
         <div className="stack" style={{ gap: 8 }}>
