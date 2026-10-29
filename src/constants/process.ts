@@ -1,40 +1,20 @@
-import { Filter, FlaskConical, Truck, PackageCheck } from 'lucide-react';
 import type { ProcessStep } from '@/types';
 
 export const processSteps: ProcessStep[] = [
   {
-    number: '01',
-    icon: Filter,
-    title: 'Multi-Stage Filtration',
-    description:
-      'Raw water passes through several filtration stages, removing sediments, chemicals, and bacteria for crystal-clear purity.',
-    image: '/images/filtration-tanks.webp',
-    imageAlt: 'Water storage tanks and stainless steel filtration units',
+    title: 'Drawn from our own borehole',
+    description: 'Water comes from our own source in Aku, never from tankers.',
   },
   {
-    number: '02',
-    icon: FlaskConical,
-    title: 'Quality Checks',
-    description: 'Water is checked for clarity, taste and safety before it is packaged.',
-    image: '/images/lab-testing.webp',
-    imageAlt: 'Water quality testing equipment in a laboratory',
+    title: 'Treated and filtered',
+    description: 'Multi-stage filtration removes sediment and impurities, leaving water that is clean and clear.',
   },
   {
-    number: '03',
-    icon: PackageCheck,
-    title: 'Sealed & Packaged',
-    description:
-      'Approved water is sealed in hygienic sachets and bottles using automated machines. No human hands touch the water.',
-    image: '/images/sachet-machine-closeup.webp',
-    imageAlt: 'Automatic sachet water filling and sealing machine',
+    title: 'Sealed and shrink-wrapped by machine',
+    description: 'Every pack goes through our sealing and shrink-wrap line before it leaves.',
   },
   {
-    number: '04',
-    icon: Truck,
-    title: 'Delivered to You',
-    description:
-      'Packaged water is loaded onto clean delivery trucks and brought straight to your home, shop, or office, fast.',
-    image: '/images/stacked-sachet-bags.webp',
-    imageAlt: 'Bags of sachet water stacked for delivery',
+    title: 'Delivered fresh',
+    description: 'Loaded straight onto our van and brought to your shop, office or event.',
   },
 ];

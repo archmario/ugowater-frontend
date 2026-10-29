@@ -10,6 +10,9 @@ export const siteConfig = {
   // Short form for the logo, with "TABLE WATER" underneath
   shortName: 'Omionkpo',
   slogan: 'My People First',
+  poweredBy: 'Umueze Pure Water Services',
+  // Shown on the home page trust strip
+  shopsServed: 120,
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://omionkpo.archmario.com').replace(/\/$/, ''),
   tagline: 'Pure Table Water in Enugu',
   description:

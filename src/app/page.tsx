@@ -1,77 +1,117 @@
-import Hero from '@/components/Hero';
-import Features from '@/components/Features';
-import Gallery from '@/components/Gallery';
-import WhatToExpect from '@/components/WhatToExpect';
-import OrderSection from '@/components/OrderSection';
 import Link from 'next/link';
-import { ArrowRight, Droplets, ShieldCheck, Truck, Wallet } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { BgPhoto, CtaBand, Photo } from '@/components/Decor';
+import Features from '@/components/Features';
+import { ArrowIcon, BagIcon, GearIcon, HandshakeIcon, PinIcon, ShieldIcon } from '@/components/Icons';
+import { siteConfig } from '@/config/site';
+import { orderMessage, waLink } from '@/utils/whatsapp';
+
+const d = (ms: number) => ({ ['--d' as string]: `${ms}ms` });
+const { nafdac, shopsServed } = siteConfig;
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <Features />
-      <Gallery />
-
-      {/* CTA section */}
-      <section className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-4">
-          <div
-            data-reveal
-            className="max-w-4xl mx-auto bg-gradient-to-br from-primary to-accent rounded-3xl p-8 md:p-12 text-center relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
-            <div className="relative z-10">
-              <Droplets className="h-12 w-12 text-white mx-auto mb-4" />
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 text-balance">
-                Ready for Clean, Fresh Water at Your Door?
-              </h2>
-              <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto text-balance">
-                Order now and pay on delivery. From a single bag of sachets to bulk bottles, we have
-                you covered across Enugu State.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="bg-white text-primary hover:bg-white/90 text-base h-12 px-8"
-                  asChild
-                >
-                  <Link href="/#order">
-                    Place Your Order
-                    <ArrowRight className="h-4 w-4 ml-2" />
-                  </Link>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="text-base h-12 px-8 bg-transparent border-white/40 text-white hover:bg-white/10 hover:text-white"
-                  asChild
-                >
-                  <Link href="/products">Browse Products</Link>
-                </Button>
-              </div>
-
-              <div className="flex flex-wrap items-center justify-center gap-8 mt-12">
-                {[
-                  { icon: ShieldCheck, label: 'NAFDAC Registered' },
-                  { icon: Truck, label: 'Delivered to Your Door' },
-                  { icon: Wallet, label: 'Pay on Delivery' },
-                ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-white/90">
-                    <item.icon className="h-5 w-5" />
-                    <span className="text-sm font-medium">{item.label}</span>
-                  </div>
-                ))}
-              </div>
+      {/* HERO */}
+      <section className="hero">
+        <BgPhoto src="/images/omionkpo-billboard.webp" alt="Omionkpo Table Water billboard over an Enugu road" priority />
+        <div className="wrap row">
+          <div className="stack" style={{ maxWidth: 620 }}>
+            <span className="pill enter">{siteConfig.slogan.toUpperCase()}</span>
+            <h1 className="enter" style={d(100)}>Clean. Cold.<br /><em>Delivered.</em></h1>
+            <p className="lead enter" style={{ ...d(220), fontSize: 19 }}>
+              Omionkpo Table Water is bottled and bagged in Aku, Igbo-Etiti, Enugu State and brought to your shop,
+              office or event. Order in one message on WhatsApp.
+            </p>
+            <div className="enter" style={{ ...d(340), display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+              <Link href="/products/#order" className="btn btn-blue">Order now <ArrowIcon /></Link>
+              <Link href="/products" className="btn btn-ghost">See products</Link>
+            </div>
+            <div className="badges enter" style={d(460)}>
+              <a
+                className="badge"
+                href={nafdac.verifyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Check this number on NAFDAC's website"
+              >
+                <ShieldIcon />
+                <div><small>NAFDAC Reg. No.</small><b>{nafdac.number}</b><span className="verify">Verify on NAFDAC ↗</span></div>
+              </a>
+              <div className="badge"><PinIcon /><div><small>Made in</small><b>Aku, Igbo-Etiti</b></div></div>
             </div>
           </div>
         </div>
       </section>
-      <WhatToExpect />
-      <OrderSection />
+
+      {/* TRUST STRIP */}
+      <section className="trust">
+        <div className="wrap grid">
+          <div data-reveal><b><span data-count={shopsServed} data-suffix="+">{shopsServed}+</span> shops</b><span>served across Enugu State so far</span></div>
+          <div data-reveal style={d(100)}><b>NAFDAC registered</b><span>Reg. No. {nafdac.number}, on every pack</span></div>
+          <div data-reveal style={d(200)}><b>Machine-packed</b><span>Sealed and shrink-wrapped on our line</span></div>
+          <div data-reveal style={d(300)}><b>Local and fast</b><span>Straight from Aku to your door</span></div>
+        </div>
+      </section>
+
+      {/* WHAT WE DO */}
+      <section className="section">
+        <div className="wrap stack" style={{ gap: 40 }}>
+          <div className="head" data-reveal>
+            <span className="eyebrow">WHY OMIONKPO</span>
+            <h2>Water you can trust, from people you know.</h2>
+          </div>
+          <div className="grid-3">
+            <Link href="/products" className="tile" data-reveal>
+              <span className="icon-box"><BagIcon /></span>
+              <h3>Order in 30 seconds</h3>
+              <p>Pick sachet bags or premium bottles, choose your quantity, and send the order straight to WhatsApp.</p>
+              <span className="more">See products <ArrowIcon /></span>
+            </Link>
+            <Link href="/process" className="tile" data-reveal style={d(120)}>
+              <span className="icon-box"><GearIcon /></span>
+              <h3>See our process</h3>
+              <p>From our borehole to the sealing line to your hand. No guesswork about what you are drinking.</p>
+              <span className="more">Our process <ArrowIcon /></span>
+            </Link>
+            <Link href="/distributor" className="tile" data-reveal style={d(240)}>
+              <span className="icon-box"><HandshakeIcon /></span>
+              <h3>Earn with us</h3>
+              <p>Stock Omionkpo in your shop or run your own delivery round. Join {shopsServed}+ shops already selling.</p>
+              <span className="more">Become a distributor <ArrowIcon /></span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY CHOOSE US */}
+      <Features />
+
+      {/* PROCESS TEASER */}
+      <section className="section">
+        <div className="wrap row" style={{ gap: 56 }}>
+          <div className="col-sm media" data-reveal="left">
+            <Photo
+              src="/images/omionkpo-factory.webp"
+              alt="Omionkpo staff running the bottling line at the factory"
+              sizes="(max-width: 760px) 90vw, 560px"
+              height={440}
+            />
+          </div>
+          <div className="col stack" data-reveal="right">
+            <span className="eyebrow">OUR PROCESS</span>
+            <h2>Sealed by machine. Never by hand.</h2>
+            <p className="lead">Every pack runs through our sealing and shrink-wrap line before it leaves the factory, so what reaches you is exactly what left us.</p>
+            <Link href="/process" className="btn btn-blue" style={{ alignSelf: 'flex-start' }}>See how it&apos;s made <ArrowIcon /></Link>
+          </div>
+        </div>
+      </section>
+
+      <CtaBand
+        title="Thirsty shop? Big event this weekend?"
+        text="Send us one WhatsApp message and we'll handle the rest."
+        href={waLink(orderMessage)}
+        label="Order on WhatsApp"
+      />
     </>
   );
 }

@@ -2,21 +2,15 @@ import type { LucideIcon } from 'lucide-react';
 
 export interface Product {
   id: string;
+  // Small label above the name, e.g. SACHET
+  tag: string;
   name: string;
   description: string;
   price: number;
-  oldPrice?: number;
-  popular?: boolean;
-  size: string;
-  features: string[];
+  unit: string;
+  unitPlural: string;
+  // Empty until there's a photo; the card shows a branded placeholder
   image: string;
-}
-
-export interface Photo {
-  src: string;
-  alt: string;
-  label: string;
-  span?: string;
 }
 
 export interface Feature {
@@ -28,18 +22,8 @@ export interface Feature {
 }
 
 export interface ProcessStep {
-  number: string;
-  icon: LucideIcon;
   title: string;
   description: string;
-  image: string;
-  imageAlt: string;
-}
-
-// One tile in the home page photo grid; it fades between its images
-export interface MosaicTile {
-  images: { src: string; alt: string }[];
-  span?: string;
 }
 
 export interface TeamMember {
@@ -55,13 +39,6 @@ export interface Ceo {
   // Empty until the client sends a photo; the page shows a placeholder
   image: string;
   quote: string;
-}
-
-// What every customer can count on; shown until real reviews come in
-export interface CustomerPromise {
-  icon: LucideIcon;
-  title: string;
-  description: string;
 }
 
 export interface NavItem {
