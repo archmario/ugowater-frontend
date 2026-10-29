@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { CtaBand, PageHero } from '@/components/Decor';
+import { CtaBand, PageHero, Photo } from '@/components/Decor';
 import OrderCalculator from '@/components/OrderCalculator';
 import { pageMetadata } from '@/utils/metadata';
 import { waLink } from '@/utils/whatsapp';
@@ -29,10 +29,19 @@ export default function ProductsPage() {
       </section>
 
       <section className="section ice">
-        <div className="wrap head" data-reveal>
-          <span className="eyebrow">PREMIUM RANGE</span>
-          <h2>For offices, events and gifting.</h2>
-          <p className="lead">Our premium bottles bring the same clean Omionkpo water in a crystal-clear pack that looks good on any table. Ask about bulk pricing for weddings, church programmes and corporate events.</p>
+        <div className="wrap row" style={{ gap: 56 }}>
+          <div className="col stack" data-reveal="left">
+            <span className="eyebrow">PREMIUM RANGE</span>
+            <h2>For offices, events and gifting.</h2>
+            <p className="lead">Our premium bottles bring the same clean Omionkpo water in a crystal-clear pack that looks good on any table. Ask about bulk pricing for weddings, church programmes and corporate events.</p>
+          </div>
+          <div className="col-sm media" data-reveal="right">
+            <Photo
+              src="/images/omionkpo-cans.webp"
+              alt="Shrink-wrapped packs of Omionkpo Table Water"
+              sizes="(max-width: 760px) 90vw, 560px"
+            />
+          </div>
         </div>
       </section>
 
