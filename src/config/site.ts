@@ -38,7 +38,7 @@ export const siteConfig = {
     number: 'A1-112190L',
     product: 'Omionkpo Table Water',
     expires: '2028-09-28',
-    verifyUrl: 'https://registration.nafdac.gov.ng/Home/VerifyProduct',
+    verifyUrl: 'https://registration.nafdac.gov.ng/#verify',
   },
   // Leave a URL empty to hide that icon
   socials: {
