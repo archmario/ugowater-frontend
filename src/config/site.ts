@@ -20,8 +20,9 @@ export const siteConfig = {
   phone: '+234 901 234 8017',
   // Digits only, international format, for wa.me links
   whatsapp: '2349012348017',
-  // Empty until the client sets one up; the site hides email when empty
-  email: '',
+  // Orders by email (also shown in the footer); problems go to support
+  email: 'order@omionkpo.com',
+  supportEmail: 'support@omionkpo.com',
   address: {
     street: 'Plot 1, Udeme Road, Oda Aku',
     city: 'Aku',

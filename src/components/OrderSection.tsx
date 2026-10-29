@@ -1,6 +1,6 @@
 'use client';
 
-import { CheckCircle2, Clock, Mail, MapPin, Phone } from 'lucide-react';
+import { CheckCircle2, Clock, LifeBuoy, Mail, MapPin, Phone } from 'lucide-react';
 import { siteConfig } from '@/config/site';
 import { products } from '@/constants/products';
 import { useOrderForm } from '@/hooks/order/useOrderForm';
@@ -14,7 +14,8 @@ const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
 
 const contactInfo = [
   { icon: Phone, label: 'Call or WhatsApp', value: siteConfig.phone, href: `tel:${siteConfig.phone.replace(/\s/g, '')}` },
-  ...(siteConfig.email ? [{ icon: Mail, label: 'Email us', value: siteConfig.email, href: `mailto:${siteConfig.email}` }] : []),
+  { icon: Mail, label: 'Order by email', value: siteConfig.email, href: `mailto:${siteConfig.email}` },
+  { icon: LifeBuoy, label: 'Any issue? Contact support', value: siteConfig.supportEmail, href: `mailto:${siteConfig.supportEmail}` },
   { icon: MapPin, label: 'Visit our factory', value: `${address.street}, ${address.city}, ${address.lga}`, href: mapLink },
   { icon: Clock, label: 'Working hours', value: siteConfig.hours },
 ];
