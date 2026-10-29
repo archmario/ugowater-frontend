@@ -53,13 +53,16 @@ export default function DistributorPage() {
               ))}
             </div>
 
-            <DistributorForm />
+            {/* on phones the photo moves behind the form */}
+            <div className="distributor-form">
+              <DistributorForm />
+            </div>
           </div>
 
           <div className="col-sm photo" data-reveal="right">
             <Photo
-              src="/images/omionkpo-factory.webp"
-              alt="Omionkpo staff in branded uniforms at the factory"
+              src="/images/omionkpo-uniform.webp"
+              alt="A child in an Omionkpo Table Water polo shirt"
               sizes="(max-width: 760px) 90vw, 480px"
               className="photo-fill"
             />

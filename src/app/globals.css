@@ -346,7 +346,7 @@ main h2 { font-weight: 800; font-size: clamp(32px, 4vw, 48px); line-height: 1.1;
 .step.done { background: var(--navy); color: #fff; border-color: var(--navy); }
 .step.done .num { background: var(--blue); }
 .step.done span:not(.num) { color: var(--soft); }
-.photo .photo-fill { position: absolute; inset: 0; height: 100% !important; object-position: 15% center; }
+.photo .photo-fill { position: absolute; inset: 0; height: 100% !important; object-position: center; }
 @media (max-width: 760px) { .photo { min-height: 360px; } }
 
 /* Home hero: the billboard, sharp and moving like footage */
@@ -529,6 +529,21 @@ body:has(.header.menu-open) .fab { opacity: 0; pointer-events: none; transition:
 .burger:focus-visible { box-shadow: 0 0 0 2px var(--blue); }
 .header.menu-open .burger { background: transparent; border: 0; }
 .header.menu-open .burger:focus-visible { box-shadow: 0 0 0 2px #8fb0ff; }
+
+/* ---------- Distributor photo: tag top right, clear of the plant ---------- */
+.photo .tag { left: auto; right: 20px; }
+
+/* ---------- Distributor on phones: the photo sits behind the form ---------- */
+@media (max-width: 760px) {
+  .photo:has(img[src*="omionkpo-uniform"]) { display: none; }
+  .distributor-form .form {
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.82)),
+      url('/images/omionkpo-uniform-640.webp') center 35% / cover no-repeat;
+    border-color: var(--line2);
+  }
+  .distributor-form .form label { text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9); }
+}
 
 /* ---------- No tap flash on phones ----------
    Phones paint a light box over anything tapped; turn it off everywhere.
