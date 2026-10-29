@@ -56,6 +56,35 @@ export default function ProcessPage() {
         </div>
       </section>
 
+      {/* THE MACHINE */}
+      <section className="section ice">
+        <div className="wrap row" style={{ gap: 56 }}>
+          <div className="col-sm machine-photo" data-reveal="left">
+            <Photo
+              src="/images/omionkpo-shrink-wrap-machine.webp"
+              alt="Omionkpo's heat shrink-wrap tunnel with its mesh conveyor"
+              sizes="(max-width: 760px) 80vw, 360px"
+            />
+            <span className="tag">Our shrink-wrap tunnel</span>
+          </div>
+          <div className="col stack" data-reveal="right">
+            <span className="eyebrow">THE MACHINE BEHIND STEP 3</span>
+            <h2>Wrapped by heat, sealed tight.</h2>
+            <p className="lead">
+              Every pack of Omionkpo rides through our heat shrink-wrap tunnel. The pack goes in on the
+              mesh conveyor, warm air shrinks the film tight around every bottle and can, and it comes out
+              sealed and ready to travel.
+            </p>
+            <ul className="machine-points">
+              <li><b>Sealed tight</b><span>The film hugs the pack, so nothing gets in on the way to you.</span></li>
+              <li><b>Easy to spot tampering</b><span>A torn or loose wrap shows at a glance. Ours leave the factory intact.</span></li>
+              <li><b>Stacks and travels well</b><span>Firm packs stay neat on the van, in the shop and on the shelf.</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div style={{ height: 96 }} />
       <CtaBand
         title="Want to see it for yourself?"
         text="Visit our factory in Aku Village, Igbo-Etiti. Message us to arrange a visit."
