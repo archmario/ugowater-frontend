@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import { BgPhoto, CtaBand, Photo } from '@/components/Decor';
 import Features from '@/components/Features';
+import OrderSection from '@/components/OrderSection';
+import TrustMarquee from '@/components/TrustMarquee';
+import WhatToExpect from '@/components/WhatToExpect';
 import { ArrowIcon, BagIcon, GearIcon, HandshakeIcon, PinIcon, ShieldIcon } from '@/components/Icons';
 import { siteConfig } from '@/config/site';
 import { orderMessage, waLink } from '@/utils/whatsapp';
@@ -43,15 +46,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TRUST STRIP */}
-      <section className="trust">
-        <div className="wrap grid">
-          <div data-reveal><b><span data-count={shopsServed} data-suffix="+">{shopsServed}+</span> shops</b><span>served across Enugu State so far</span></div>
-          <div data-reveal style={d(100)}><b>NAFDAC registered</b><span>Reg. No. {nafdac.number}, on every pack</span></div>
-          <div data-reveal style={d(200)}><b>Machine-packed</b><span>Sealed and shrink-wrapped on our line</span></div>
-          <div data-reveal style={d(300)}><b>Local and fast</b><span>Straight from Aku to your door</span></div>
-        </div>
-      </section>
+      {/* WHY CHOOSE US, SCROLLING */}
+      <TrustMarquee />
 
       {/* WHAT WE DO */}
       <section className="section">
@@ -106,12 +102,18 @@ export default function Home() {
         </div>
       </section>
 
+      {/* MY PEOPLE FIRST */}
+      <WhatToExpect />
+
       <CtaBand
         title="Thirsty shop? Big event this weekend?"
         text="Send us one WhatsApp message and we'll handle the rest."
         href={waLink(orderMessage)}
         label="Order on WhatsApp"
       />
+
+      {/* GET IN TOUCH */}
+      <OrderSection />
     </>
   );
 }

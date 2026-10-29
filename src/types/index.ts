@@ -41,6 +41,13 @@ export interface Ceo {
   quote: string;
 }
 
+// What every customer can count on; shown until real reviews come in
+export interface CustomerPromise {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
 export interface NavItem {
   label: string;
   href: string;
