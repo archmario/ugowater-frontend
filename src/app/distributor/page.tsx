@@ -29,7 +29,7 @@ export default function DistributorPage() {
         eyebrow="BECOME A DISTRIBUTOR"
         title={<>Wear the blue. <em>Earn on every bag.</em></>}
         text={`Join ${siteConfig.shopsServed}+ shops already selling Omionkpo. We supply, you sell, your people drink clean water.`}
-        bg="/images/omionkpo-delivery.webp"
+        bg="/images/omionkpo-delivery-truck.webp"
         look="sharp"
       />
 
