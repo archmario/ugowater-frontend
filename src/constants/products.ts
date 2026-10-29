@@ -10,7 +10,7 @@ export const products: Product[] = [
     price: 350,
     unit: 'bag',
     unitPlural: 'bags',
-    image: '',
+    image: '/images/omionkpo-sachet-bags.webp',
   },
   {
     id: 'bottle',
