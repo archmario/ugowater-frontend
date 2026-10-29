@@ -529,3 +529,10 @@ body:has(.header.menu-open) .fab { opacity: 0; pointer-events: none; transition:
 .header.menu-open .burger { background: transparent; border: 0; }
 .header.menu-open .burger:focus-visible { box-shadow: 0 0 0 2px #8fb0ff; }
 
+/* ---------- Floating WhatsApp button in brand light blue ---------- */
+.fab {
+  background: linear-gradient(140deg, #5aa2ff 0%, #2f6bff 55%, #1446d9 100%);
+  box-shadow: 0 12px 28px rgba(20, 70, 217, 0.4);
+}
+.fab::after { border-color: #5aa2ff; }
+.fab:hover { box-shadow: 0 16px 34px rgba(20, 70, 217, 0.5); }
