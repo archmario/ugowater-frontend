@@ -583,3 +583,8 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
 }
 .fab::after { border-color: #5aa2ff; }
 .fab:hover { box-shadow: 0 16px 34px rgba(20, 70, 217, 0.5); }
+
+/* ---------- No rubber-band bounce, on any device ----------
+   Edge, Firefox and phone browsers stretch the page past its edges when you
+   scroll hard. Turned off on the page itself, in every direction. */
+html, body { overscroll-behavior: none; }
