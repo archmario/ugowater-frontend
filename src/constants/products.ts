@@ -7,7 +7,7 @@ export const products: Product[] = [
     tag: 'SACHET',
     name: 'Pure water bag',
     description: 'The everyday favourite. 20 sachets per bag.',
-    price: 300,
+    price: 350,
     unit: 'bag',
     unitPlural: 'bags',
     image: '',
