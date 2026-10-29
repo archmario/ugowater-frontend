@@ -480,6 +480,23 @@ html, body { overflow-x: clip; }
 .map iframe { display: block; width: 100%; height: 380px; border: 0; }
 @media (max-width: 760px) { .map iframe { height: 300px; } }
 
+/* ---------- Process photo: framed, with a mirror reflection ---------- */
+.mirror-col { flex: 1.25 1 520px; min-width: 0; }
+.mirror-frame {
+  border: 8px solid #fff; border-radius: 26px; overflow: hidden; background: #fff;
+  box-shadow: 0 0 0 2px var(--blue), 0 28px 56px rgba(11, 31, 85, 0.2);
+}
+.mirror-frame img { display: block; border-radius: 18px; }
+.mirror-reflection {
+  height: 140px; margin-top: 10px; padding: 0 10px; overflow: hidden;
+  display: flex; align-items: flex-end;
+  transform: scaleY(-1); pointer-events: none;
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.45), transparent 90%);
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.45), transparent 90%);
+}
+.mirror-reflection img { width: 100%; height: auto; border-radius: 18px; filter: blur(1px); }
+@media (max-width: 760px) { .mirror-reflection { height: 80px; } }
+
 /* ---------- Phone menu: full-screen overlay (big centred links, close X, Order Now) ---------- */
 @media (max-width: 860px) {
   /* backdrop-filter would trap the fixed overlay inside the header, so drop it while open */

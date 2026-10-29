@@ -24,13 +24,18 @@ export default function ProcessPage() {
 
       <section className="section">
         <div className="wrap row" style={{ gap: 56, alignItems: 'flex-start' }}>
-          <div className="col-sm media sticky-media" data-reveal="left">
-            <Photo
-              src="/images/omionkpo-bottles.webp"
-              alt="Bottles of Omionkpo Table Water"
-              sizes="(max-width: 760px) 90vw, 480px"
-              height={520}
-            />
+          <div className="mirror-col sticky-media" data-reveal="left">
+            <div className="mirror-frame">
+              <Photo
+                src="/images/omionkpo-pouring.webp"
+                alt="Omionkpo Table Water poured into a glass, with 150cl and 60cl bottles"
+                sizes="(max-width: 760px) 90vw, 640px"
+              />
+            </div>
+            {/* the picture reflected underneath, fading out */}
+            <div className="mirror-reflection" aria-hidden="true">
+              <img src="/images/omionkpo-pouring-640.webp" alt="" />
+            </div>
           </div>
 
           <div className="col timeline">
