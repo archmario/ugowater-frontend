@@ -13,7 +13,7 @@ export const siteConfig = {
   poweredBy: 'Umueze Pure Water Services',
   // Shown on the home page trust strip
   shopsServed: 120,
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://omionkpo.archmario.com').replace(/\/$/, ''),
+  url: (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://omionkpo.com').replace(/\/$/, ''),
   tagline: 'Pure Table Water in Enugu',
   description:
     'Omionkpo Table Water: pure, fresh, refreshing table water and sachet water from Aku, Igbo-Etiti, delivered to homes and businesses across Enugu State. Pay on delivery.',
