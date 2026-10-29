@@ -5,8 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { siteConfig } from '@/config/site';
 import { navItems } from '@/constants/navigation';
-import { orderMessage, waLink } from '@/utils/whatsapp';
-import { CloseIcon, MenuIcon, WaIcon } from './Icons';
+import { CloseIcon, MenuIcon } from './Icons';
 
 // Links are written with a trailing slash (trailingSlash export), so compare without it
 const samePath = (a: string, b: string) => a.replace(/\/$/, '') === b.replace(/\/$/, '');
@@ -25,8 +24,20 @@ export default function Header() {
 
   useEffect(() => setOpen(false), [pathname]);
 
+  // While the full-screen menu is open: no page scrolling behind it, Escape closes it
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false);
+    document.documentElement.style.overflow = 'hidden';
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.documentElement.style.overflow = '';
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [open]);
+
   return (
-    <header className={`header${scrolled ? ' scrolled' : ''}`}>
+    <header className={`header${scrolled ? ' scrolled' : ''}${open ? ' menu-open' : ''}`}>
       <div className="wrap nav">
         <Link href="/" className="logo" aria-label={`${siteConfig.name}, home`}>
           <img
@@ -46,7 +57,7 @@ export default function Header() {
           aria-controls="site-nav"
           onClick={() => setOpen((o) => !o)}
         >
-          {open ? <CloseIcon /> : <MenuIcon />}
+          {open ? <CloseIcon color="#fff" size={26} /> : <MenuIcon />}
         </button>
 
         <nav id="site-nav" className={`links${open ? ' open' : ''}`}>
@@ -60,9 +71,9 @@ export default function Header() {
               {n.label}
             </Link>
           ))}
-          <a className="btn btn-wa" href={waLink(orderMessage)} target="_blank" rel="noopener noreferrer">
-            <WaIcon /> Order on WhatsApp
-          </a>
+          <Link className="btn btn-blue" href="/#order" onClick={() => setOpen(false)}>
+            Order Now
+          </Link>
         </nav>
       </div>
     </header>
