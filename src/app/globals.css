@@ -412,18 +412,17 @@ html, body { overflow-x: clip; }
   /* slide up instead of in from the sides */
   [data-reveal="left"], [data-reveal="right"] { transform: translateY(40px); }
 
-  /* Hero on phones: the whole picture, centred, with the text underneath */
-  .bg-photo { position: static; }
-  .bg-frame { position: relative; overflow: hidden; }
+  /* Hero on phones: the whole picture stays in the background, centred,
+     over its blurred copy, with the wash on top so the text reads */
+  .bg-frame { display: flex; align-items: center; justify-content: center; }
   .bg-photo .bg-main {
-    position: relative; display: block; width: 100%; height: auto;
-    object-fit: contain; transform-origin: center;
+    position: static; width: 100%; height: auto;
+    transform-origin: center;
     -webkit-mask-image: none; mask-image: none;
   }
-  .hero .bg-wash, .page-hero.dark .bg-wash { display: none; }
-  .hero .row { position: relative; z-index: 1; min-height: 0; padding-block: 28px 40px; background: rgba(238, 244, 255, 0.92); }
-  .page-hero.dark { padding: 0; display: block; }
-  .page-hero.dark > .wrap { padding-block: 28px 40px; background: rgba(11, 31, 85, 0.82); }
+  .hero .bg-wash { background: rgba(238, 244, 255, 0.8); }
+  .page-hero.dark .bg-wash, .page-hero.bright .bg-wash, .page-hero.sharp .bg-wash { background: rgba(11, 31, 85, 0.62); }
+  .hero .row { min-height: 0; padding-block: 56px 64px; }
 
   /* Other photos: show the whole picture, no cropping */
   .media img { height: auto !important; }
