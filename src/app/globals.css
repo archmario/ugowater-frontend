@@ -401,3 +401,13 @@ a.badge:hover { color: var(--navy); border-color: var(--blue); box-shadow: 0 10p
 @media (prefers-reduced-motion: reduce) {
   .bg-photo .bg-main { animation-duration: 40s !important; }
 }
+
+/* Nothing may push the page wider than the screen (stops the sideways bounce on phones).
+   clip, not hidden, so the sticky header keeps working. */
+html, body { overflow-x: clip; }
+.hero .row { min-height: min(78svh, 720px); }
+
+@media (max-width: 760px) {
+  /* slide up instead of in from the sides */
+  [data-reveal="left"], [data-reveal="right"] { transform: translateY(40px); }
+}
