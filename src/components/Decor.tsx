@@ -9,15 +9,17 @@ export function BgPhoto({ src, alt = '', priority = false }: { src: string; alt?
       <div className="bg-photo" aria-hidden={alt ? undefined : true}>
         {/* blurred copy that fills the space; the small file is enough once blurred */}
         <img className="bg-fill" src={src.replace(/\.webp$/, '-640.webp')} alt="" aria-hidden="true" decoding="async" />
-        <img
-          className="bg-main"
-          src={src}
-          srcSet={srcSetFor(src)}
-          sizes="(max-width: 760px) 100vw, 70vw"
-          alt={alt}
-          loading={priority ? 'eager' : 'lazy'}
-          decoding="async"
-        />
+        <div className="bg-frame">
+          <img
+            className="bg-main"
+            src={src}
+            srcSet={srcSetFor(src)}
+            sizes="(max-width: 760px) 100vw, 70vw"
+            alt={alt}
+            loading={priority ? 'eager' : 'lazy'}
+            decoding="async"
+          />
+        </div>
       </div>
       <div className="bg-wash" aria-hidden="true" />
     </>
