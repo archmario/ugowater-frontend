@@ -613,3 +613,25 @@ html, body { overscroll-behavior: none; }
   box-shadow: 0 10px 24px rgba(20, 70, 217, 0.25);
 }
 .btn-wa:hover { box-shadow: 0 16px 32px rgba(20, 70, 217, 0.35); }
+
+/* ---------- Phone heroes: text on a frosted panel ----------
+   The photo stays clear around the edges; the words sit on frosted glass so
+   they read easily over any part of the picture. */
+@media (max-width: 760px) {
+  .hero .bg-wash { background: rgba(238, 244, 255, 0.3); }
+  .hero .row > .stack {
+    background: rgba(255, 255, 255, 0.66);
+    -webkit-backdrop-filter: blur(10px) saturate(1.25); backdrop-filter: blur(10px) saturate(1.25);
+    border: 1px solid rgba(255, 255, 255, 0.75); border-radius: 22px;
+    padding: 22px 18px; box-shadow: 0 18px 40px rgba(11, 31, 85, 0.14);
+  }
+  .hero .lead { color: var(--navy); }
+
+  .page-hero.dark .bg-wash, .page-hero.bright .bg-wash, .page-hero.sharp .bg-wash { background: rgba(11, 31, 85, 0.3); }
+  .page-hero.dark .head {
+    background: rgba(11, 31, 85, 0.55);
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 20px; padding: 22px 18px;
+  }
+  .page-hero.dark .lead { color: #e3eaff; }
+}
