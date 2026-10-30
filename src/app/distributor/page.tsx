@@ -6,7 +6,7 @@ import { pageMetadata } from '@/utils/metadata';
 
 export const metadata: Metadata = pageMetadata({
   title: 'Become a Distributor',
-  description: 'Stock Omionkpo Table Water in your shop or run your own delivery round. Apply on WhatsApp.',
+  description: 'Stock Omionkpo Table Water in your shop or run your own delivery round. Apply in minutes.',
   path: '/distributor/',
 });
 
@@ -17,7 +17,7 @@ const perks = [
 ];
 
 const steps = [
-  { t: 'Apply', b: 'Fill the form. It opens WhatsApp with your details ready to send.' },
+  { t: 'Apply', b: 'Fill the form and send it. Your details go straight to our team.' },
   { t: 'We call you', b: 'We confirm your area, pricing and first order.' },
   { t: 'Start selling', b: 'Your first supply arrives and you start earning.' },
 ];

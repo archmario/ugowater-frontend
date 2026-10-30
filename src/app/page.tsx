@@ -6,7 +6,6 @@ import TrustMarquee from '@/components/TrustMarquee';
 import WhatToExpect from '@/components/WhatToExpect';
 import { ArrowIcon, BagIcon, GearIcon, HandshakeIcon, PinIcon, ShieldIcon } from '@/components/Icons';
 import { siteConfig } from '@/config/site';
-import { orderMessage, waLink } from '@/utils/whatsapp';
 
 const d = (ms: number) => ({ ['--d' as string]: `${ms}ms` });
 const { nafdac, shopsServed } = siteConfig;
@@ -22,8 +21,8 @@ export default function Home() {
             <span className="pill enter">{siteConfig.slogan.toUpperCase()}</span>
             <h1 className="enter" style={d(100)}>Clean. Cold.<br /><em>Delivered.</em></h1>
             <p className="lead enter" style={{ ...d(220), fontSize: 19 }}>
-              Omionkpo Table Water is bottled and bagged in Aku, Igbo-Etiti, Enugu State and brought to your shop,
-              office or event. Order in one message on WhatsApp.
+              Pure, safe, refreshing table water from our own factory in Aku, brought straight to your
+              home, shop or event. Order in minutes and pay when it arrives.
             </p>
             <div className="enter" style={{ ...d(340), display: 'flex', flexWrap: 'wrap', gap: 12 }}>
               <Link href="/products/#order" className="btn btn-blue">Order now <ArrowIcon /></Link>
@@ -60,7 +59,7 @@ export default function Home() {
             <Link href="/products" className="tile" data-reveal>
               <span className="icon-box"><BagIcon /></span>
               <h3>Order in 30 seconds</h3>
-              <p>Pick sachet bags or premium bottles, choose your quantity, and send the order straight to WhatsApp.</p>
+              <p>Pick sachet bags, premium bottles or cans, choose your quantity, and send your order in seconds.</p>
               <span className="more">See products <ArrowIcon /></span>
             </Link>
             <Link href="/process" className="tile" data-reveal style={d(120)}>
@@ -107,9 +106,9 @@ export default function Home() {
 
       <CtaBand
         title="Thirsty shop? Big event this weekend?"
-        text="Send us one WhatsApp message and we'll handle the rest."
-        href={waLink(orderMessage)}
-        label="Order on WhatsApp"
+        text="Send us your order and we'll handle the rest."
+        href="/#order"
+        label="Order now"
       />
 
       {/* GET IN TOUCH */}

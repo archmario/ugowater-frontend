@@ -23,7 +23,7 @@ export const customerPromises: CustomerPromise[] = [
   },
   {
     icon: MessageCircle,
-    title: 'A real person on WhatsApp',
-    description: 'Orders and questions go straight to our team on WhatsApp, not a call centre.',
+    title: 'A real person, every time',
+    description: 'Orders and questions go straight to our team, not a call centre.',
   },
 ];

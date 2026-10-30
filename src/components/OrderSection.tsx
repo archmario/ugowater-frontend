@@ -31,8 +31,8 @@ export default function OrderSection() {
           <span className="eyebrow">GET IN TOUCH</span>
           <h2>Order pure water in Enugu.</h2>
           <p className="lead">
-            Fill out the form to send your order to us on WhatsApp. Our team will confirm your order
-            and delivery details. Fast, easy, and no payment until delivery.
+            Fill out the form to send us your order. Our team will confirm your order and delivery
+            details. Fast, easy, and no payment until delivery.
           </p>
         </div>
 

@@ -18,7 +18,7 @@ export default function DistributorForm() {
   return (
     <form className="form" onSubmit={submit} data-reveal>
       <label>Full name<input name="name" type="text" autoComplete="name" placeholder="Chinedu Eze" required /></label>
-      <label>WhatsApp number<input name="phone" type="tel" autoComplete="tel" placeholder="080..." required /></label>
+      <label>Phone number<input name="phone" type="tel" autoComplete="tel" placeholder="080..." required /></label>
       <label>Town / area<input name="town" type="text" placeholder="e.g. Ogbede" required /></label>
       <label>Bags per week<input name="bags" type="number" min={1} inputMode="numeric" placeholder="50" /></label>
       <button type="submit" className="btn btn-navy"><WaIcon /> Apply to distribute</button>

@@ -78,7 +78,7 @@ export default function OrderCalculator() {
           <b key={total} className="bump">{formatNaira(total)}</b>
         </div>
         <span style={{ fontSize: 13, color: 'var(--muted)', marginTop: -12 }}>
-          Delivery fee confirmed on WhatsApp.
+          We confirm the delivery fee with your order.
         </span>
         <a className="btn btn-wa" style={{ minHeight: 56, fontSize: 17 }} href={waLink(message)} target="_blank" rel="noopener noreferrer">
           <WaIcon size={20} /> Send order on WhatsApp

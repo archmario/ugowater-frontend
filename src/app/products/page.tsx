@@ -7,7 +7,7 @@ import { waLink } from '@/utils/whatsapp';
 export const metadata: Metadata = pageMetadata({
   title: 'Products',
   description:
-    'Omionkpo sachet pure water bags and premium bottle packs, made in Aku, Igbo-Etiti. Work out your order and send it on WhatsApp.',
+    'Omionkpo sachet pure water bags and premium bottle packs, made in Aku, Igbo-Etiti. Work out your order and send it in seconds.',
   path: '/products/',
 });
 
@@ -17,7 +17,7 @@ export default function ProductsPage() {
       <PageHero
         eyebrow="ORDER IN 30 SECONDS"
         title={<>Pick it, count it, <em>send it.</em></>}
-        text="Choose what you need and we'll fill in your WhatsApp message for you. No calls, no back-and-forth."
+        text="Choose what you need and we'll put your order together for you. No calls, no back-and-forth."
         bg="/images/omionkpo-bottles.webp"
         look="bright moving"
       />
@@ -48,7 +48,7 @@ export default function ProductsPage() {
       <div style={{ height: 96 }} />
       <CtaBand
         title="Ordering for an event?"
-        text="Tell us the date and headcount and we'll quote you on WhatsApp."
+        text="Tell us the date and headcount and we'll send you a quote."
         href={waLink("Hi Omionkpo, I'd like a quote for an event.")}
         label="Get an event quote"
       />

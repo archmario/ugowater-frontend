@@ -14,7 +14,7 @@ export const features: Feature[] = [
     icon: Truck,
     title: 'Fast Delivery',
     description:
-      'We deliver to homes, shops and events across Aku and Enugu State. Order on WhatsApp and we bring it to you.',
+      'We deliver to homes, shops and events across Aku and Enugu State. Place your order and we bring it to you.',
     color: 'text-accent',
     bg: 'bg-accent/10',
   },
