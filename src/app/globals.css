@@ -614,25 +614,27 @@ html, body { overscroll-behavior: none; }
 }
 .btn-wa:hover { box-shadow: 0 16px 32px rgba(20, 70, 217, 0.35); }
 
-/* ---------- Phone heroes: text on a frosted panel ----------
-   The photo stays clear around the edges; the words sit on frosted glass so
-   they read easily over any part of the picture. */
+/* ---------- Phone heroes: text on top, whole photo below ----------
+   Standard full-bleed hero: the photo sits at the bottom of the hero, whole and
+   moving; a fade runs from solid at the top (behind the words) to clear at the
+   bottom (over the photo). No boxes behind the text. */
 @media (max-width: 760px) {
-  .hero .bg-wash { background: rgba(238, 244, 255, 0.3); }
-  .hero .row > .stack {
-    background: rgba(255, 255, 255, 0.66);
-    -webkit-backdrop-filter: blur(10px) saturate(1.25); backdrop-filter: blur(10px) saturate(1.25);
-    border: 1px solid rgba(255, 255, 255, 0.75); border-radius: 22px;
-    padding: 22px 18px; box-shadow: 0 18px 40px rgba(11, 31, 85, 0.14);
-  }
-  .hero .lead { color: var(--navy); }
+  .bg-frame { align-items: flex-end; }
 
-  .page-hero.dark .bg-wash, .page-hero.bright .bg-wash, .page-hero.sharp .bg-wash { background: rgba(11, 31, 85, 0.3); }
-  .page-hero.dark .head {
-    background: rgba(11, 31, 85, 0.55);
-    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 20px; padding: 22px 18px;
+  .hero .bg-wash {
+    background: linear-gradient(180deg,
+      rgba(238, 244, 255, 0.98) 0%, rgba(238, 244, 255, 0.96) 58%,
+      rgba(238, 244, 255, 0.55) 72%, rgba(238, 244, 255, 0) 86%);
   }
+  .hero .row { padding-block: 40px 64vw; }
+  .hero .lead { color: var(--navy); font-size: 17px !important; }
+
+  .page-hero.dark .bg-wash, .page-hero.bright .bg-wash, .page-hero.sharp .bg-wash {
+    background: linear-gradient(180deg,
+      rgba(11, 31, 85, 0.96) 0%, rgba(11, 31, 85, 0.92) 48%,
+      rgba(11, 31, 85, 0.4) 66%, rgba(11, 31, 85, 0) 84%);
+  }
+  .page-hero.dark { padding: 56px 0 66vw; }
   .page-hero.dark .lead { color: #e3eaff; }
 }
 
