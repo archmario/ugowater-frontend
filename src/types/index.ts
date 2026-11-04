@@ -11,6 +11,8 @@ export interface Product {
   unitPlural: string;
   // Empty until there's a photo; the card shows a branded placeholder
   image: string;
+  // Which part of the photo stays in view in the card, e.g. 'center 15%'
+  imagePosition?: string;
 }
 
 export interface Feature {

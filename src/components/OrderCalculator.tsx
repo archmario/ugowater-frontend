@@ -46,7 +46,7 @@ export default function OrderCalculator() {
                   sizes="(max-width: 760px) 90vw, 320px"
                   alt={p.name}
                   loading="lazy"
-                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 40%' }}
+                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: p.imagePosition ?? 'center 40%' }}
                 />
               ) : (
                 <span className="pimg-empty"><DropLogo size={44} /><span>Sachet photo coming soon</span></span>
