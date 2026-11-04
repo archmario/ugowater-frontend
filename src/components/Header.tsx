@@ -67,6 +67,8 @@ export default function Header() {
               href={n.href}
               className="link"
               aria-current={samePath(pathname, n.href) ? 'page' : undefined}
+              // Close the menu even when the link is the page you're already on
+              onClick={() => setOpen(false)}
             >
               {n.label}
             </Link>
