@@ -37,7 +37,7 @@ export default function OrderSection() {
         </div>
 
         <div className="row" style={{ gap: 24, alignItems: 'stretch' }}>
-          <div className="col-sm stack" style={{ gap: 16 }} data-reveal="left">
+          <div className="col-sm stack contact-col" style={{ gap: 16 }} data-reveal="left">
             <div className="contact-card">
               {contactInfo.map((info) => (
                 <div key={info.label} className="contact-item">
@@ -61,7 +61,7 @@ export default function OrderSection() {
             </div>
           </div>
 
-          <div className="col" data-reveal="right">
+          <div className="col order-form-col" data-reveal="right">
             {submitted ? (
               <div className="form form-done">
                 <CheckCircle2 size={56} color="#0e7a3e" aria-hidden="true" />

@@ -432,7 +432,7 @@ html, body { overflow-x: clip; }
   .hero .row { min-height: 0; padding-block: 56px 64px; }
 
   /* Other photos: show the whole picture, no cropping */
-  .media img { height: auto !important; }
+  .media img { height: auto !important; aspect-ratio: 1400 / 933; }
   .photo { min-height: 0; }
   .photo .photo-fill { position: static; height: auto !important; }
   .pimg { height: auto; aspect-ratio: 1438 / 1093; }
@@ -678,4 +678,11 @@ body:has(.header.menu-open) .fab { visibility: hidden; }
 @media (max-width: 600px) {
   .badges { flex-direction: column; align-items: stretch; }
   .badge { padding: 14px 20px; }
+}
+
+/* ---------- Phones: Get in Touch puts the order form first, with less empty space above ---------- */
+@media (max-width: 860px) {
+  #order.section { padding-top: 48px; }
+  #order .wrap.stack { gap: 28px !important; }
+  #order .order-form-col { order: -1; }
 }

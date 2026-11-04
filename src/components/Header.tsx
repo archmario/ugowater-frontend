@@ -36,6 +36,20 @@ export default function Header() {
     };
   }, [open]);
 
+  // On the home page, close the menu first and then glide to the order form.
+  // Scrolling while the menu still locks the page made it stop short.
+  const goToOrder = (e: React.MouseEvent) => {
+    setOpen(false);
+    const form = pathname === '/' ? document.getElementById('order') : null;
+    if (!form) return;
+    e.preventDefault();
+    document.documentElement.style.overflow = '';
+    requestAnimationFrame(() => {
+      form.scrollIntoView({ behavior: 'smooth' });
+      history.replaceState(null, '', '#order');
+    });
+  };
+
   return (
     <header className={`header${scrolled ? ' scrolled' : ''}${open ? ' menu-open' : ''}`}>
       <div className="wrap nav">
@@ -73,7 +87,7 @@ export default function Header() {
               {n.label}
             </Link>
           ))}
-          <Link className="btn btn-blue" href="/#order" onClick={() => setOpen(false)}>
+          <Link className="btn btn-blue" href="/#order" onClick={goToOrder}>
             Order Now
           </Link>
         </nav>
