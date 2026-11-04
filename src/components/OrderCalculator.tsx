@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { deliveryAreas, products } from '@/constants/products';
 import { formatNaira } from '@/utils/format';
 import { srcSetFor } from '@/utils/image';
@@ -12,6 +12,8 @@ export default function OrderCalculator() {
   const [productId, setProductId] = useState(products[0].id);
   const [qty, setQty] = useState(10);
   const [area, setArea] = useState(deliveryAreas[0]);
+  const [otherArea, setOtherArea] = useState('');
+  const otherRef = useRef<HTMLInputElement>(null);
   const [bumpKey, setBumpKey] = useState(0);
 
   const product = products.find((p) => p.id === productId) ?? products[0];
@@ -21,7 +23,15 @@ export default function OrderCalculator() {
     setBumpKey((k) => k + 1);
   };
 
-  const message = `Hi Omionkpo, I want to order ${qty} ${qty === 1 ? product.unit : product.unitPlural} of ${product.name.toLowerCase()}, delivered to ${area}. Estimated total ${formatNaira(total)}.`;
+  const isOther = area === 'Other';
+  const place = isOther ? otherArea.trim() || 'my location (I will share it)' : area;
+  const message = `Hi Omionkpo, I want to order ${qty} ${qty === 1 ? product.unit : product.unitPlural} of ${product.name.toLowerCase()}, delivered to ${place}. Estimated total ${formatNaira(total)}.`;
+
+  const pickArea = (a: string) => {
+    setArea(a);
+    // Put the cursor straight in the box so they can type their location
+    if (a === 'Other') requestAnimationFrame(() => otherRef.current?.focus());
+  };
 
   return (
     <div className="stack" style={{ gap: 32 }}>
@@ -67,9 +77,21 @@ export default function OrderCalculator() {
           <span className="label">Deliver to</span>
           <div className="areas">
             {deliveryAreas.map((a) => (
-              <button key={a} type="button" className="area" aria-pressed={a === area} onClick={() => setArea(a)}>{a}</button>
+              <button key={a} type="button" className="area" aria-pressed={a === area} onClick={() => pickArea(a)}>{a}</button>
             ))}
           </div>
+          {isOther && (
+            <input
+              ref={otherRef}
+              className="area-input"
+              type="text"
+              value={otherArea}
+              onChange={(e) => setOtherArea(e.target.value)}
+              placeholder="Type your town, street or landmark"
+              aria-label="Your delivery location"
+              autoComplete="street-address"
+            />
+          )}
         </div>
 
         <div className="hr" />

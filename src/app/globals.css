@@ -252,6 +252,11 @@ main h2 { font-weight: 800; font-size: clamp(32px, 4vw, 48px); line-height: 1.1;
   background: #fff; color: var(--navy); border: 1px solid var(--line2); transition: background 0.25s, color 0.25s;
 }
 .area[aria-pressed="true"] { background: var(--navy); color: #fff; border-color: var(--navy); }
+.area-input {
+  width: 100%; min-height: 48px; margin-top: 4px; padding: 0 16px; border-radius: 12px; border: 1px solid var(--line2);
+  background: #fff; color: var(--navy); font: inherit; font-size: 16px; transition: border-color 0.2s, box-shadow 0.2s;
+}
+.area-input:focus { outline: none; border-color: #7f95cf; }
 .hr { height: 1px; background: var(--line); }
 .total { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
 .total b { font-family: var(--font-display); font-weight: 900; font-size: 36px; }
