@@ -291,7 +291,7 @@ main h2 { font-weight: 800; font-size: clamp(32px, 4vw, 48px); line-height: 1.1;
   min-height: 48px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--line2); font: inherit; font-weight: 400;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
-.form input:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 4px rgba(20, 70, 217, 0.15); }
+.form input:focus { outline: none; border-color: #7f95cf; }
 .form .btn { grid-column: 1 / -1; }
 .photo { position: relative; border-radius: 24px; overflow: hidden; min-height: 520px; }
 .photo .tag { position: absolute; top: 20px; left: 20px; padding: 10px 16px; border-radius: 999px; background: var(--blue); color: #fff; font-weight: 700; font-size: 14px; }
@@ -477,7 +477,7 @@ html, body { overflow-x: clip; }
   min-height: 48px; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line2); font: inherit; font-weight: 400;
   background: #fff; color: var(--navy); transition: border-color 0.2s, box-shadow 0.2s;
 }
-.form :is(select, textarea):focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 4px rgba(20, 70, 217, 0.15); }
+.form :is(select, textarea):focus { outline: none; border-color: #7f95cf; }
 .form textarea { resize: vertical; }
 .form .full { grid-column: 1 / -1; }
 .col .form { height: 100%; align-content: start; }
@@ -665,4 +665,11 @@ body:has(.header.menu-open) .fab { visibility: hidden; }
 /* ---------- Small phones: hero buttons stack at the same full width ---------- */
 @media (max-width: 400px) {
   .hero-ctas .btn { flex: 1 1 100%; justify-content: center; }
+}
+
+/* ---------- Form dropdown: our own arrow, sitting close to the text ---------- */
+.form select {
+  appearance: none; -webkit-appearance: none; padding-right: 40px; background-color: #fff; cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%230b1f55' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 16px center; background-size: 12px 8px;
 }
