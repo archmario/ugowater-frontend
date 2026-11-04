@@ -97,8 +97,9 @@ main h2 { font-weight: 800; font-size: clamp(32px, 4vw, 48px); line-height: 1.1;
 .btn:active { transform: translateY(0) scale(0.98); }
 .btn-blue { background: var(--blue); color: #fff; box-shadow: 0 10px 24px rgba(20, 70, 217, 0.25); }
 .btn-blue:hover { color: #fff; box-shadow: 0 16px 32px rgba(20, 70, 217, 0.32); }
-.btn-ghost { background: #fff; border: 0; color: var(--blue); box-shadow: 0 8px 22px rgba(11, 31, 85, 0.1); }
-.btn-ghost:hover { color: var(--navy); box-shadow: 0 12px 28px rgba(11, 31, 85, 0.14); }
+.btn-ghost { background: rgba(255, 255, 255, 0.7); border: 1.5px solid var(--navy); color: var(--navy); box-shadow: none;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background 0.25s, color 0.25s; }
+.btn-ghost:hover { background: var(--navy); color: #fff; box-shadow: 0 10px 24px rgba(11, 31, 85, 0.2); }
 .btn-navy { background: var(--navy); color: #fff; }
 .btn-navy:hover { color: #fff; }
 .btn-wa { background: var(--wa); color: #fff; }
@@ -659,4 +660,9 @@ body:has(.header.menu-open) .fab { visibility: hidden; }
     box-shadow: inset 0 0 0 1.5px rgba(143, 176, 255, 0.7);
     padding: 8px 26px; border-radius: 999px;
   }
+}
+
+/* ---------- Small phones: hero buttons stack at the same full width ---------- */
+@media (max-width: 400px) {
+  .hero-ctas .btn { flex: 1 1 100%; justify-content: center; }
 }

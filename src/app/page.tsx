@@ -24,9 +24,9 @@ export default function Home() {
               Pure, safe, refreshing table water from our own factory in Aku, brought straight to your
               home, shop or event. Order in minutes and pay when it arrives.
             </p>
-            <div className="enter" style={{ ...d(340), display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+            <div className="enter hero-ctas" style={{ ...d(340), display: 'flex', flexWrap: 'wrap', gap: 12 }}>
               <Link href="/products/#order" className="btn btn-blue">Order now <ArrowIcon /></Link>
-              <Link href="/products" className="btn btn-ghost">See products</Link>
+              <Link href="/process" className="btn btn-ghost">The process</Link>
             </div>
             <div className="badges enter" style={d(460)}>
               <a
