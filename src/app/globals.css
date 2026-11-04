@@ -686,3 +686,6 @@ body:has(.header.menu-open) .fab { visibility: hidden; }
   #order .wrap.stack { gap: 28px !important; }
   #order .order-form-col { order: -1; }
 }
+
+/* ---------- Bigger menu button, easy to tap with a thumb ---------- */
+.burger { width: 52px; height: 52px; margin-right: -8px; }

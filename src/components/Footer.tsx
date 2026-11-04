@@ -52,12 +52,12 @@ export default function Footer() {
           {/* Quick links */}
           <div>
             <h2 className="font-semibold text-white mb-4">Quick Links</h2>
-            <ul className="space-y-2.5">
+            <ul className="space-y-1">
               {navItems.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/60 hover:text-primary transition-colors"
+                    className="inline-block py-2 text-[15px] text-white/60 hover:text-primary transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -69,12 +69,12 @@ export default function Footer() {
           {/* Products */}
           <div>
             <h2 className="font-semibold text-white mb-4">Our Products</h2>
-            <ul className="space-y-2.5">
+            <ul className="space-y-1">
               {products.map((product) => (
                 <li key={product.id}>
                   <Link
                     href="/products"
-                    className="text-sm text-white/60 hover:text-primary transition-colors"
+                    className="inline-block py-2 text-[15px] text-white/60 hover:text-primary transition-colors"
                   >
                     {product.name}
                   </Link>
@@ -88,28 +88,28 @@ export default function Footer() {
             <h2 className="font-semibold text-white mb-4">Contact Us</h2>
             <ul className="space-y-3">
               <li className="flex items-start gap-2.5">
-                <Phone className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                <Phone className="h-4 w-4 text-primary mt-[7px] flex-shrink-0" />
                 <a
                   href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}
-                  className="text-sm text-white/60 hover:text-primary"
+                  className="inline-block py-1 text-[15px] text-white/60 hover:text-primary"
                 >
                   {siteConfig.phone}
                 </a>
               </li>
               {siteConfig.email && (
                 <li className="flex items-start gap-2.5">
-                  <Mail className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                  <Mail className="h-4 w-4 text-primary mt-[7px] flex-shrink-0" />
                   <a
                     href={`mailto:${siteConfig.email}`}
-                    className="text-sm text-white/60 hover:text-primary"
+                    className="inline-block py-1 text-[15px] text-white/60 hover:text-primary"
                   >
                     {siteConfig.email}
                   </a>
                 </li>
               )}
               <li className="flex items-start gap-2.5">
-                <MapPin className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm text-white/60">
+                <MapPin className="h-4 w-4 text-primary mt-[7px] flex-shrink-0" />
+                <span className="py-1 text-[15px] text-white/60">
                   {siteConfig.address.street}, {siteConfig.address.city}, {siteConfig.address.lga},{' '}
                   {siteConfig.address.region}
                 </span>

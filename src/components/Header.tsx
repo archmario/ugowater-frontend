@@ -71,7 +71,7 @@ export default function Header() {
           aria-controls="site-nav"
           onClick={() => setOpen((o) => !o)}
         >
-          {open ? <CloseIcon color="#fff" size={26} /> : <MenuIcon />}
+          {open ? <CloseIcon color="#fff" size={30} /> : <MenuIcon size={30} />}
         </button>
 
         <nav id="site-nav" className={`links${open ? ' open' : ''}`}>
