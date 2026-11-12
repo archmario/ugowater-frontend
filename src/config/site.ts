@@ -41,6 +41,12 @@ export const siteConfig = {
     expires: '2028-09-28',
     verifyUrl: 'https://registration.nafdac.gov.ng/#verify',
   },
+  // For customers who pay by transfer
+  bank: {
+    name: 'Moniepoint MFB',
+    accountName: 'Umueze Pure Water Services',
+    accountNumber: '5341843962',
+  },
   // Leave a URL empty to hide that icon
   socials: {
     facebook: '',

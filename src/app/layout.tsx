@@ -26,6 +26,15 @@ const poppins = localFont({
   display: 'swap',
 });
 
+// Elegant italic serif for accent words ("to your hand.", "my people.")
+const playfair = localFont({
+  src: './fonts/playfair-display-latin-400-italic.woff2',
+  weight: '400',
+  style: 'italic',
+  variable: '--font-serif',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -38,7 +47,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-NG" className={`${inter.variable} ${poppins.variable}`}>
+    <html lang="en-NG" className={`${inter.variable} ${poppins.variable} ${playfair.variable}`}>
       <body>
         <StructuredData />
         <Header />

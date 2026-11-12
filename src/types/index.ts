@@ -23,11 +23,6 @@ export interface Feature {
   bg: string;
 }
 
-export interface ProcessStep {
-  title: string;
-  description: string;
-}
-
 export interface TeamMember {
   name: string;
   role: string;
