@@ -120,17 +120,34 @@ export default function Home() {
       {/* PROCESS TEASER */}
       <section className="section">
         <div className="wrap row" style={{ gap: 56 }}>
-          <div className="col-sm media" data-reveal="left">
-            <Photo
-              src="/images/omionkpo-premium-cans.webp"
-              alt="Rows of sealed Omionkpo Premium Water cans"
-              sizes="(max-width: 760px) 90vw, 560px"
-              height={440}
-            />
+          <div className="col-sm seal" data-reveal="zoom">
+            <svg className="seal-ring" viewBox="0 0 200 200" aria-hidden="true">
+              <defs>
+                <path id="seal-path" d="M100,100 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0" />
+              </defs>
+              <text>
+                <textPath href="#seal-path" textLength="548" lengthAdjust="spacing">SEALED BY MACHINE · NEVER BY HAND · </textPath>
+              </text>
+            </svg>
+            <div className="seal-photo">
+              <Photo
+                src="/images/omionkpo-premium-cans.webp"
+                alt="Rows of sealed Omionkpo Premium Water cans"
+                sizes="(max-width: 760px) 70vw, 380px"
+              />
+            </div>
+            <span className="seal-stamp">
+              100%
+              <small>machine sealed</small>
+            </span>
           </div>
           <div className="col stack" data-reveal="right">
             <span className="eyebrow">OUR PROCESS</span>
-            <h2>Sealed by machine. Never by hand.</h2>
+            <h2>
+              Sealed by machine.
+              <br />
+              <em className="serif-em">Never by hand.</em>
+            </h2>
             <p className="lead">Every pack runs through our sealing and shrink-wrap line before it leaves the factory, so what reaches you is exactly what left us.</p>
             <Link href="/process" className="btn btn-blue" style={{ alignSelf: 'flex-start' }}>See how it&apos;s made <ArrowIcon /></Link>
           </div>
